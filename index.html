@@ -178,7 +178,7 @@
         <span class="font-heading text-[13px] font-bold tracking-[0.28em] text-carbon max-[380px]:hidden">DEALMAKERS</span>
       </a>
       <nav class="hidden items-center gap-6 xl:gap-7 lg:flex" aria-label="Primary">
-        <a class="motion-safe:transition text-[13px] font-medium text-gunmetal hover:text-carbon" href="the-room.html">The room</a>
+        <a class="motion-safe:transition text-[13px] font-semibold text-carbon" href="index.html#hero">Home</a>
         <a class="motion-safe:transition text-[13px] font-medium text-gunmetal hover:text-carbon" href="how-it-works.html">How it works</a>
         <a class="motion-safe:transition text-[13px] font-medium text-gunmetal hover:text-carbon" href="events.html">Events</a>
         <a class="motion-safe:transition text-[13px] font-medium text-gunmetal hover:text-carbon" href="access.html">Access</a>
@@ -191,7 +191,7 @@
     </div>
     <div id="mobile-nav" class="hidden border-t border-gunmetal/15 bg-bone px-5 py-6 lg:hidden">
       <div class="flex flex-col gap-1">
-        <a class="py-2.5 text-[15px] font-medium text-carbon" href="the-room.html">The room</a>
+        <a class="py-2.5 text-[15px] font-semibold text-carbon" href="index.html#hero">Home</a>
         <a class="py-2.5 text-[15px] font-medium text-carbon" href="how-it-works.html">How it works</a>
         <a class="py-2.5 text-[15px] font-medium text-carbon" href="events.html">Events</a>
         <a class="py-2.5 text-[15px] font-medium text-carbon" href="access.html">Access</a>
@@ -396,7 +396,7 @@
       <div class="flex flex-col items-center text-center">
         <p class="fly-in text-[11px] font-semibold uppercase tracking-[0.28em] text-bronze">Sponsors</p>
         <h2 class="fly-in fly-stagger-1 mt-3 font-heading text-xl font-semibold text-carbon md:text-2xl">The operators who help underwrite the room</h2>
-        <p id="sponsors-empty" class="fly-in fly-stagger-2 mt-4 hidden max-w-lg text-sm text-gunmetal">Add logos under <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsor</code> and list filenames in <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsor/manifest.json</code>.</p>
+        <p id="sponsors-empty" class="fly-in fly-stagger-2 mt-4 hidden max-w-lg text-sm text-gunmetal">Add logos under <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsors</code> and list filenames in <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsors/manifest.json</code>.</p>
       </div>
     </div>
     <div id="sponsors-wrap" class="sponsors-track relative mt-12 hidden overflow-hidden py-2 md:overflow-x-clip">
@@ -747,7 +747,7 @@
             showEmpty();
             return;
           }
-          var base = 'images/sponsor/';
+          var base = 'images/sponsors/';
           var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           var html = files
             .filter(function (name) {
@@ -783,7 +783,7 @@
           if (empty) empty.classList.add('hidden');
         }
 
-        fetch('images/sponsor/manifest.json')
+        fetch('images/sponsors/manifest.json')
           .then(function (r) {
             if (!r.ok) throw new Error('manifest');
             return r.json();
