@@ -53,6 +53,31 @@
     .animate-marquee {
       animation: marquee 50s linear infinite;
     }
+    @keyframes sponsors-marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .animate-sponsors-marquee {
+        animation: sponsors-marquee 55s linear infinite;
+      }
+      .sponsors-track:hover .animate-sponsors-marquee {
+        animation-play-state: paused;
+      }
+    }
+    @keyframes sponsor-logo-breathe {
+      0%, 100% { transform: scale(1); opacity: 0.88; }
+      50% { transform: scale(1.06); opacity: 1; }
+    }
+    .sponsor-logo-anim {
+      animation: sponsor-logo-breathe 4.5s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sponsor-logo-anim {
+        animation: none;
+        opacity: 1;
+      }
+    }
     @media (prefers-reduced-motion: no-preference) {
       .reveal {
         animation: fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -226,7 +251,7 @@
               How the room works
             </a>
           </div>
-          <div class="reveal reveal-delay-3 mt-12 space-y-3 rounded-2xl border border-bone/10 bg-bone/5 p-6 backdrop-blur-md md:p-8">
+          <div class="reveal reveal-delay-3 mt-12 space-y-3">
             <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-bronze">In the room</p>
             <ul class="space-y-3 text-[14px] text-bone/75">
               <li class="flex gap-3"><i data-feather="users" class="mt-0.5 h-4 w-4 shrink-0 text-bronze"></i><span>Operators &amp; investors</span></li>
@@ -271,7 +296,7 @@
   <!-- Stats / counters -->
   <section id="stats" class="relative z-20 -mt-10 bg-transparent px-4 pb-4 md:-mt-14 md:px-6">
     <div class="mx-auto max-w-7xl rounded-3xl bg-bone/95 p-8 shadow-xl shadow-carbon/10 ring-1 ring-gunmetal/10 backdrop-blur-md md:p-10">
-      <p class="fly-in text-[11px] font-semibold uppercase tracking-[0.28em] text-gunmetal">Some numbers</p>
+      <p class="fly-in text-[11px] font-semibold uppercase tracking-[0.28em] text-gunmetal">In the room</p>
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         <div class="fly-in fly-stagger-1 flex gap-4 rounded-2xl bg-gunmetal/[0.05] p-5 ring-1 ring-gunmetal/5">
           <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-green/12 text-green"><i data-feather="users" class="h-5 w-5"></i></span>
@@ -285,19 +310,21 @@
           <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-green/12 text-green"><i data-feather="map-pin" class="h-5 w-5"></i></span>
           <div>
             <p class="font-heading text-3xl font-semibold tracking-tight text-carbon md:text-4xl"><span data-counter="2">0</span></p>
-            <p class="mt-1 text-sm leading-snug text-gunmetal">Cities: Dallas &amp; Austin</p>
+            <p class="mt-1 text-sm leading-snug text-gunmetal">Cities in the room: Dallas &amp; Austin</p>
           </div>
         </div>
         <div class="fly-in fly-stagger-3 flex gap-4 rounded-2xl bg-gunmetal/[0.05] p-5 ring-1 ring-gunmetal/5">
           <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-green/12 text-green"><i data-feather="dollar-sign" class="h-5 w-5"></i></span>
           <div>
-            <p class="mt-1 text-sm leading-snug text-gunmetal">In live deals pitched</p>
+            <p class="font-heading text-3xl font-semibold tracking-tight text-carbon md:text-4xl"><span data-counter="120" data-prefix="$" data-suffix="M+">0</span></p>
+            <p class="mt-1 text-sm leading-snug text-gunmetal">In live deals pitched in the room</p>
           </div>
         </div>
         <div class="fly-in fly-stagger-4 flex gap-4 rounded-2xl bg-gunmetal/[0.05] p-5 ring-1 ring-gunmetal/5">
           <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-green/12 text-green"><i data-feather="mic" class="h-5 w-5"></i></span>
           <div>
-            <p class="mt-1 text-sm leading-snug text-gunmetal">Deals pitched on stage</p>
+            <p class="font-heading text-3xl font-semibold tracking-tight text-carbon md:text-4xl"><span data-counter="85" data-suffix="+">0</span></p>
+            <p class="mt-1 text-sm leading-snug text-gunmetal">Deals pitched on stage in the room</p>
           </div>
         </div>
       </div>
@@ -361,58 +388,74 @@
       </div>
     </div>
   </section>
-  <!-- Explore -->
-  <section id="explore" class="relative overflow-hidden bg-gunmetal/[0.02] py-20 md:py-28">
-    <div class="pointer-events-none absolute left-1/2 top-0 h-[24rem] w-[min(100%,48rem)] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(197,163,125,0.12),transparent_65%)]" aria-hidden="true"></div>
+
+  <!-- Sponsors -->
+  <section id="sponsors" class="relative overflow-hidden border-y border-gunmetal/10 bg-bone py-16 md:py-20" aria-label="Sponsors">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(31,61,43,0.06),transparent)]" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-7xl px-5 md:px-8">
-      <p class="fly-in text-[11px] font-semibold uppercase tracking-[0.28em] text-gunmetal">Go deeper</p>
+      <div class="flex flex-col items-center text-center">
+        <p class="fly-in text-[11px] font-semibold uppercase tracking-[0.28em] text-bronze">Sponsors</p>
+        <h2 class="fly-in fly-stagger-1 mt-3 font-heading text-xl font-semibold text-carbon md:text-2xl">The operators who help underwrite the room</h2>
+        <p id="sponsors-empty" class="fly-in fly-stagger-2 mt-4 hidden max-w-lg text-sm text-gunmetal">Add logos under <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsor</code> and list filenames in <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsor/manifest.json</code>.</p>
+      </div>
+    </div>
+    <div id="sponsors-wrap" class="sponsors-track relative mt-12 hidden overflow-hidden py-2 md:overflow-x-clip">
+      <div id="sponsors-marquee" class="flex w-max items-center gap-16 animate-sponsors-marquee md:gap-24"></div>
+    </div>
+  </section>
+
+  <!-- Explore -->
+  <section id="explore" class="relative overflow-hidden bg-gradient-to-b from-bone via-bone to-green/[0.06] py-20 md:py-28">
+    <div class="pointer-events-none absolute left-1/2 top-0 h-[24rem] w-[min(100%,48rem)] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(31,61,43,0.14),transparent_65%)]" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-7xl px-5 md:px-8">
+      <p class="fly-in text-[11px] font-semibold uppercase tracking-[0.28em] text-green">Go deeper</p>
       <h2 class="fly-in fly-stagger-1 mt-4 max-w-3xl font-heading text-2xl font-semibold uppercase leading-tight tracking-wide text-carbon md:text-[2rem]">
         Everything in the room, <span class="text-bronze">by chapter.</span>
       </h2>
       <p class="fly-in fly-stagger-2 mt-5 max-w-2xl text-gunmetal">Each page mirrors how we run the working room — same palette, same tone, full detail.</p>
 
       <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        <a href="the-room.html" class="fly-in fly-stagger-1 group flex flex-col rounded-3xl bg-white/70 p-8 shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm motion-safe:transition hover:ring-bronze/40 hover:shadow-lg md:p-9">
-          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-green/12 text-green"><i data-feather="layers" class="h-5 w-5"></i></span>
-          <h3 class="mt-6 font-heading text-lg font-semibold text-carbon group-hover:text-bronze motion-safe:transition">The room</h3>
-          <p class="mt-3 flex-1 text-sm leading-relaxed text-gunmetal">Real estate, capital, growth, life — the four filters that define who belongs here.</p>
-          <span class="mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="the-room.html" class="fly-in fly-stagger-1 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9">
+          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="layers" class="h-5 w-5"></i></span>
+          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">The room</h3>
+          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Real estate, capital, growth, life — the four filters that define who belongs here.</p>
+          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="how-it-works.html" class="fly-in fly-stagger-2 group flex flex-col rounded-3xl bg-white/70 p-8 shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm motion-safe:transition hover:ring-bronze/40 hover:shadow-lg md:p-9">
-          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-bronze/18 text-bronze"><i data-feather="git-branch" class="h-5 w-5"></i></span>
-          <h3 class="mt-6 font-heading text-lg font-semibold text-carbon group-hover:text-bronze motion-safe:transition">How it works</h3>
-          <p class="mt-3 flex-1 text-sm leading-relaxed text-gunmetal">Community, demonstrated expertise, and real opportunities — the rhythm of every session.</p>
-          <span class="mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="how-it-works.html" class="fly-in fly-stagger-2 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9">
+          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="git-branch" class="h-5 w-5"></i></span>
+          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">How it works</h3>
+          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Community, demonstrated expertise, and real opportunities — the rhythm of every session.</p>
+          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="events.html" class="fly-in fly-stagger-3 group flex flex-col rounded-3xl bg-carbon p-8 text-bone noise-carbon shadow-lg shadow-carbon/25 ring-1 ring-bone/10 motion-safe:transition hover:ring-bronze/50 md:p-9 sm:col-span-2 lg:col-span-1">
-          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/10 text-bronze"><i data-feather="calendar" class="h-5 w-5"></i></span>
-          <h3 class="mt-6 font-heading text-lg font-semibold text-bone">Events</h3>
-          <p class="mt-3 flex-1 text-sm leading-relaxed text-bone/70">CEO format flagship rooms, past schedule, immersions — and where to request access.</p>
-          <span class="mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="events.html" class="fly-in fly-stagger-3 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9 sm:col-span-2 lg:col-span-1">
+          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="calendar" class="h-5 w-5"></i></span>
+          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Events</h3>
+          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">CEO format flagship rooms, past schedule, immersions — and where to request access.</p>
+          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="access.html" class="fly-in fly-stagger-4 group flex flex-col rounded-3xl bg-white/70 p-8 shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm motion-safe:transition hover:ring-bronze/40 hover:shadow-lg md:p-9">
-          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-green/12 text-green"><i data-feather="key" class="h-5 w-5"></i></span>
-          <h3 class="mt-6 font-heading text-lg font-semibold text-carbon group-hover:text-bronze motion-safe:transition">Access</h3>
-          <p class="mt-3 flex-1 text-sm leading-relaxed text-gunmetal">Curated and welcoming — what access means, what it doesn&apos;t, and who the room is for.</p>
-          <span class="mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="access.html" class="fly-in fly-stagger-4 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9">
+          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="key" class="h-5 w-5"></i></span>
+          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Access</h3>
+          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Curated and welcoming — what access means, what it doesn&apos;t, and who the room is for.</p>
+          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="membership.html" class="fly-in fly-stagger-5 group flex flex-col rounded-3xl bg-white/70 p-8 shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm motion-safe:transition hover:ring-bronze/40 hover:shadow-lg md:p-9">
-          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-bronze/18 text-bronze"><i data-feather="credit-card" class="h-5 w-5"></i></span>
-          <h3 class="mt-6 font-heading text-lg font-semibold text-carbon group-hover:text-bronze motion-safe:transition">Membership</h3>
-          <p class="mt-3 flex-1 text-sm leading-relaxed text-gunmetal">Annual rhythm, member benefits, and how to stay closest to the deal flow.</p>
-          <span class="mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="membership.html" class="fly-in fly-stagger-5 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9">
+          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="credit-card" class="h-5 w-5"></i></span>
+          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Membership</h3>
+          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Annual rhythm, member benefits, and how to stay closest to the deal flow.</p>
+          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="launch-a-city.html" class="fly-in fly-stagger-6 group flex flex-col rounded-3xl bg-white/70 p-8 shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm motion-safe:transition hover:ring-bronze/40 hover:shadow-lg md:p-9">
-          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-green/12 text-green"><i data-feather="map" class="h-5 w-5"></i></span>
-          <h3 class="mt-6 font-heading text-lg font-semibold text-carbon group-hover:text-bronze motion-safe:transition">Launch a city</h3>
-          <p class="mt-3 flex-1 text-sm leading-relaxed text-gunmetal">Own the Dealmakers room in your market — economics, expectations, and alignment.</p>
-          <span class="mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="launch-a-city.html" class="fly-in fly-stagger-6 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9">
+          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="map" class="h-5 w-5"></i></span>
+          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Launch a city</h3>
+          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Own the Dealmakers room in your market — economics, expectations, and alignment.</p>
+          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="apply.html" class="fly-in group flex flex-col rounded-3xl bg-gradient-to-br from-gunmetal/[0.08] to-bone/80 p-8 shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm motion-safe:transition hover:ring-bronze/40 hover:shadow-lg md:p-9 sm:col-span-2 lg:col-span-3">
-          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-carbon/90 text-bone"><i data-feather="mic" class="h-5 w-5"></i></span>
-          <h3 class="mt-6 font-heading text-lg font-semibold text-carbon group-hover:text-bronze motion-safe:transition">Apply to speak</h3>
-          <p class="mt-3 flex-1 text-sm leading-relaxed text-gunmetal">Bring judgment, facilitate tension, and leave the room with something worth carrying.</p>
-          <span class="mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Speaker criteria <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="apply.html" class="fly-in group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9 sm:col-span-2 lg:col-span-3">
+          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="mic" class="h-5 w-5"></i></span>
+          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Apply to speak</h3>
+          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Bring judgment, facilitate tension, and leave the room with something worth carrying.</p>
+          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Speaker criteria <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
       </div>
     </div>
@@ -688,8 +731,70 @@
         });
       }
 
+      function initSponsors() {
+        var wrap = document.getElementById('sponsors-wrap');
+        var track = document.getElementById('sponsors-marquee');
+        var empty = document.getElementById('sponsors-empty');
+        if (!wrap || !track) return;
+
+        function showEmpty() {
+          wrap.classList.add('hidden');
+          if (empty) empty.classList.remove('hidden');
+        }
+
+        function showStrip(files) {
+          if (!files || !files.length) {
+            showEmpty();
+            return;
+          }
+          var base = 'images/sponsor/';
+          var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          var html = files
+            .filter(function (name) {
+              return typeof name === 'string' && name.length > 0;
+            })
+            .map(function (name, i) {
+              var delay = ((i % 6) * 0.45).toFixed(2);
+              var src = base + name.split('/').map(encodeURIComponent).join('/');
+              var animClass = reducedMotion ? '' : ' sponsor-logo-anim';
+              return (
+                '<div class="flex h-[4.5rem] shrink-0 items-center justify-center px-8 md:h-[5.5rem] md:px-12">' +
+                '<img src="' +
+                src +
+                '" alt="" class="max-h-14 w-auto max-w-[11rem] object-contain md:max-h-[4.75rem] md:max-w-[12rem]' +
+                animClass +
+                '" style="animation-delay:' +
+                delay +
+                's" loading="lazy" decoding="async" />' +
+                '</div>'
+              );
+            })
+            .join('');
+          if (!html) {
+            showEmpty();
+            return;
+          }
+          track.className = reducedMotion
+            ? 'mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-14 gap-y-8 px-4 md:gap-x-20'
+            : 'flex w-max items-center gap-16 animate-sponsors-marquee md:gap-24';
+          wrap.classList.toggle('overflow-hidden', !reducedMotion);
+          track.innerHTML = reducedMotion ? html : html + html;
+          wrap.classList.remove('hidden');
+          if (empty) empty.classList.add('hidden');
+        }
+
+        fetch('images/sponsor/manifest.json')
+          .then(function (r) {
+            if (!r.ok) throw new Error('manifest');
+            return r.json();
+          })
+          .then(showStrip)
+          .catch(showEmpty);
+      }
+
       initScrollFlyIn();
       initCounters();
+      initSponsors();
     })();
   </script>
 </body>
