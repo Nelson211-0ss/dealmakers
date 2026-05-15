@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dealmakers | Real Estate | Austin, TX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -20,8 +20,8 @@
             bronze: '#C5A37D',
           },
           fontFamily: {
-            heading: ['Fraunces', 'system-ui', 'sans-serif'],
-            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+            heading: ['Poppins', 'system-ui', 'sans-serif'],
+            sans: ['Poppins', 'system-ui', 'sans-serif'],
           },
         },
       },
@@ -181,6 +181,7 @@
         <a class="motion-safe:transition text-[13px] font-semibold text-carbon" href="index.html#hero">Home</a>
         <a class="motion-safe:transition text-[13px] font-medium text-gunmetal hover:text-carbon" href="how-it-works.html">How it works</a>
         <a class="motion-safe:transition text-[13px] font-medium text-gunmetal hover:text-carbon" href="events.html">Events</a>
+        <a class="motion-safe:transition text-[13px] font-medium text-gunmetal hover:text-carbon" href="sponsorship.html">Sponsorship</a>
         <a class="motion-safe:transition text-[13px] font-medium text-gunmetal hover:text-carbon" href="access.html">Access</a>
         <a class="motion-safe:transition text-[13px] font-medium text-gunmetal hover:text-carbon" href="membership.html">Membership</a>
         <a class="motion-safe:transition text-[13px] font-medium text-gunmetal hover:text-carbon" href="launch-a-city.html">Launch a city</a>
@@ -194,6 +195,7 @@
         <a class="py-2.5 text-[15px] font-semibold text-carbon" href="index.html#hero">Home</a>
         <a class="py-2.5 text-[15px] font-medium text-carbon" href="how-it-works.html">How it works</a>
         <a class="py-2.5 text-[15px] font-medium text-carbon" href="events.html">Events</a>
+        <a class="py-2.5 text-[15px] font-medium text-carbon" href="sponsorship.html">Sponsorship</a>
         <a class="py-2.5 text-[15px] font-medium text-carbon" href="access.html">Access</a>
         <a class="py-2.5 text-[15px] font-medium text-carbon" href="membership.html">Membership</a>
         <a class="py-2.5 text-[15px] font-medium text-carbon" href="launch-a-city.html">Launch a city</a>
@@ -396,7 +398,12 @@
       <div class="flex flex-col items-center text-center">
         <p class="fly-in text-[11px] font-semibold uppercase tracking-[0.28em] text-bronze">Sponsors</p>
         <h2 class="fly-in fly-stagger-1 mt-3 font-heading text-xl font-semibold text-carbon md:text-2xl">The operators who help underwrite the room</h2>
-        <p id="sponsors-empty" class="fly-in fly-stagger-2 mt-4 hidden max-w-lg text-sm text-gunmetal">Add logos under <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsors</code> and list filenames in <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsors/manifest.json</code>.</p>
+        <p class="fly-in fly-stagger-2 mt-5 max-w-2xl text-sm leading-relaxed text-gunmetal md:text-[15px]">From booths to moderated panels — partner where the room earns trust. Visibility compounds when sponsors return month after month.</p>
+        <div class="fly-in fly-stagger-3 mt-7 flex flex-wrap justify-center gap-3">
+          <a href="sponsorship.html" class="motion-safe:transition inline-flex items-center gap-2 rounded-full bg-green px-6 py-2.5 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bone shadow-md shadow-green/20 hover:bg-green/90"><i data-feather="award" class="h-3.5 w-3.5"></i> Sponsorship overview</a>
+          <a href="events.html" class="motion-safe:transition inline-flex items-center gap-2 rounded-full border border-gunmetal/20 bg-white/80 px-6 py-2.5 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-carbon shadow-sm backdrop-blur-sm hover:border-bronze hover:text-bronze">Featured session</a>
+        </div>
+        <p id="sponsors-empty" class="fly-in fly-stagger-4 mt-10 hidden max-w-lg text-sm text-gunmetal">Add logos under <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsors</code> and list filenames in <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsors/manifest.json</code>.</p>
       </div>
     </div>
     <div id="sponsors-wrap" class="sponsors-track relative mt-12 hidden overflow-hidden py-2 md:overflow-x-clip">
@@ -451,7 +458,13 @@
           <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Own the Dealmakers room in your market — economics, expectations, and alignment.</p>
           <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="apply.html" class="fly-in group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9 sm:col-span-2 lg:col-span-3">
+        <a href="sponsorship.html" class="fly-in group relative flex flex-col overflow-hidden rounded-3xl bg-gradient-to-br from-carbon via-carbon to-green/90 p-8 text-bone shadow-xl shadow-carbon/30 ring-1 ring-bronze/25 motion-safe:transition hover:shadow-2xl hover:ring-bronze/45 md:p-9 sm:col-span-2 lg:col-span-1">
+          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bronze/20 text-bronze ring-1 ring-bronze/25"><i data-feather="trending-up" class="h-5 w-5"></i></span>
+          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Sponsorship</h3>
+          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Tiered partnerships from exhibitor to featured moderator — engineered for recurring presence beside real deal flow.</p>
+          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">View tiers <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        </a>
+        <a href="apply.html" class="fly-in group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9 sm:col-span-2 lg:col-span-2">
           <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="mic" class="h-5 w-5"></i></span>
           <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Apply to speak</h3>
           <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Bring judgment, facilitate tension, and leave the room with something worth carrying.</p>
@@ -518,6 +531,7 @@
               <li><a class="hover:text-bronze motion-safe:transition" href="the-room.html">The room</a></li>
               <li><a class="hover:text-bronze motion-safe:transition" href="how-it-works.html">How it works</a></li>
               <li><a class="hover:text-bronze motion-safe:transition" href="events.html">Events</a></li>
+              <li><a class="hover:text-bronze motion-safe:transition" href="sponsorship.html">Sponsorship</a></li>
               <li><a class="hover:text-bronze motion-safe:transition" href="apply.html">Apply to speak</a></li>
             </ul>
           </div>
