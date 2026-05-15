@@ -6,27 +6,10 @@
   <title>Dealmakers | Real Estate | Austin, TX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            carbon: '#0F1115',
-            bone: '#F4F3EF',
-            green: '#1F3D2B',
-            gunmetal: '#3A3F45',
-            bronze: '#C5A37D',
-          },
-          fontFamily: {
-            heading: ['Poppins', 'system-ui', 'sans-serif'],
-            sans: ['Poppins', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preload" as="image" href="images/Violet%20Crowned%20Media_Deal%20Makers-4_websize.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
   <style>
     html {
       scroll-padding-top: 104px;
@@ -174,8 +157,7 @@
   <header class="sticky top-0 z-50 border-b border-gunmetal/10 bg-bone/80 backdrop-blur-xl">
     <div class="mx-auto flex min-h-[5.25rem] max-w-7xl items-center justify-between gap-4 px-5 py-2 md:min-h-[5.75rem] md:px-8">
       <a href="index.html#hero" class="motion-safe:transition group flex items-center gap-3 text-carbon hover:opacity-80" aria-label="Dealmakers home">
-        <img src="images/DM%20BLACK%20TRANSPARENT.png" alt="" width="180" height="60" class="h-11 w-auto shrink-0 md:h-[3.25rem]" />
-        <span class="font-heading text-[13px] font-bold tracking-[0.28em] text-carbon max-[380px]:hidden">DEALMAKERS</span>
+        <img src="images/DM%20BLACK%20TRANSPARENT.png" alt="" width="216" height="72" class="h-14 w-auto shrink-0 md:h-16" />
       </a>
       <nav class="hidden items-center gap-6 xl:gap-7 lg:flex" aria-label="Primary">
         <a class="motion-safe:transition text-[13px] font-semibold text-carbon" href="index.html#hero">Home</a>
@@ -408,8 +390,10 @@
         <p id="sponsors-empty" class="fly-in fly-stagger-4 mt-10 hidden max-w-lg text-sm text-gunmetal">Add logos under <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsors</code> and list filenames in <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsors/manifest.json</code>.</p>
       </div>
     </div>
-    <div id="sponsors-wrap" class="sponsors-track relative mt-12 hidden overflow-hidden py-2 md:overflow-x-clip">
-      <div id="sponsors-marquee" class="flex w-max items-center gap-16 animate-sponsors-marquee md:gap-24"></div>
+    <div class="relative mx-auto mt-12 max-w-7xl px-5 md:px-8">
+      <div id="sponsors-wrap" class="sponsors-track relative hidden w-full overflow-hidden py-2 md:overflow-x-clip">
+        <div id="sponsors-marquee" class="flex w-max items-center gap-4 animate-sponsors-marquee md:gap-6"></div>
+      </div>
     </div>
   </section>
 
@@ -775,10 +759,10 @@
               var src = base + name.split('/').map(encodeURIComponent).join('/');
               var animClass = reducedMotion ? '' : ' sponsor-logo-anim';
               return (
-                '<div class="flex h-[4.5rem] shrink-0 items-center justify-center px-8 md:h-[5.5rem] md:px-12">' +
+                '<div class="inline-flex h-[4.625rem] min-w-[7rem] max-w-[12rem] shrink-0 items-center justify-center rounded-xl border border-gunmetal/15 bg-white/80 px-4 py-2.5 shadow-sm backdrop-blur-sm md:h-[5.375rem] md:max-w-[13rem] md:rounded-2xl md:px-5 md:py-3">' +
                 '<img src="' +
                 src +
-                '" alt="" class="max-h-14 w-auto max-w-[11rem] object-contain md:max-h-[4.75rem] md:max-w-[12rem]' +
+                '" alt="" class="max-h-11 w-auto max-w-full object-contain md:max-h-[3.5rem]' +
                 animClass +
                 '" style="animation-delay:' +
                 delay +
@@ -792,8 +776,8 @@
             return;
           }
           track.className = reducedMotion
-            ? 'mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-14 gap-y-8 px-4 md:gap-x-20'
-            : 'flex w-max items-center gap-16 animate-sponsors-marquee md:gap-24';
+            ? 'mx-auto flex w-full flex-wrap items-center justify-center gap-3 px-1 md:gap-4'
+            : 'flex w-max items-center gap-4 animate-sponsors-marquee md:gap-6';
           wrap.classList.toggle('overflow-hidden', !reducedMotion);
           track.innerHTML = reducedMotion ? html : html + html;
           wrap.classList.remove('hidden');
