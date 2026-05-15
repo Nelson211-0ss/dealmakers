@@ -235,8 +235,8 @@
   <section id="how-it-works" class="relative overflow-hidden bg-bone py-20 md:py-28">
     <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_45%_at_100%_20%,rgba(197,163,125,0.09),transparent)]" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-7xl px-5 md:px-8">
-      <div class="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-        <div>
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-16">
+        <div class="min-w-0">
           <h2 class="fly-in font-heading text-2xl font-semibold text-carbon md:text-3xl">How the room works</h2>
           <p class="fly-in fly-stagger-1 mt-4 max-w-2xl text-gunmetal">Expertise is demonstrated, not advertised. Familiar faces compound trust. Opportunities are real and treated seriously.</p>
 
@@ -264,18 +264,18 @@
             </li>
           </ol>
         </div>
-        <div class="fly-in fly-from-right lg:sticky lg:top-[6.75rem]">
-          <div class="overflow-hidden rounded-3xl shadow-2xl shadow-carbon/20 ring-1 ring-gunmetal/15">
+        <div class="fly-in fly-from-right flex min-h-0 flex-col lg:h-full">
+          <div class="relative aspect-[4/5] w-full min-h-[14rem] overflow-hidden rounded-3xl shadow-2xl shadow-carbon/20 ring-1 ring-gunmetal/15 lg:aspect-auto lg:min-h-[12rem] lg:flex-1">
             <img
               src="images/Violet%20Crowned%20Media_Deal%20Makers-71_websize.jpg"
               alt="Dealmakers working session"
-              class="aspect-[4/5] w-full object-cover md:aspect-[3/4]"
+              class="absolute inset-0 h-full w-full object-cover"
               width="800"
               height="1000"
               loading="lazy"
             />
           </div>
-          <p class="mt-4 text-center text-xs text-gunmetal/80">In the room — Austin &amp; Dallas</p>
+          <p class="mt-4 shrink-0 text-center text-xs text-gunmetal/80">In the room — Austin &amp; Dallas</p>
         </div>
       </div>
 
