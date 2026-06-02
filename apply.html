@@ -145,7 +145,7 @@
           <i data-feather="mic" class="h-[18px] w-[18px] shrink-0 text-green xl:h-5 xl:w-5"></i>
           Apply
         </a>
-        <a class="motion-safe:transition shrink-0 rounded-full bg-bronze px-5 py-2.5 font-heading text-[12px] font-semibold tracking-[0.05em] text-carbon shadow-md shadow-bronze/20 hover:bg-bronze/90 xl:px-6" href="#" data-book-call>Book A Call With Dani</a>
+        <a class="motion-safe:transition shrink-0 rounded-full bg-bronze px-5 py-2.5 font-heading text-[12px] font-semibold uppercase tracking-[0.05em] text-carbon shadow-md shadow-bronze/20 hover:bg-bronze/90 xl:px-6" href="#" data-book-call>Book a Call</a>
       </nav>
       <button type="button" id="menu-toggle" class="motion-safe:transition inline-flex items-center gap-2 rounded-lg px-2 py-2 text-[15px] font-semibold text-carbon hover:bg-gunmetal/[0.08] lg:hidden" aria-expanded="false" aria-controls="mobile-nav">
         <i data-feather="menu" class="h-6 w-6 shrink-0 text-green"></i>
@@ -195,7 +195,7 @@
           <i data-feather="mic" class="h-6 w-6 shrink-0 text-green"></i>
           Apply
         </a>
-        <a class="mt-3 block rounded-full bg-bronze px-6 py-3.5 text-center font-heading text-[11px] font-semibold tracking-[0.05em] text-carbon shadow-lg shadow-bronze/25" href="#" data-book-call>Book A Call With Dani</a>
+        <a class="mt-3 block rounded-full bg-bronze px-6 py-3.5 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.05em] text-carbon shadow-lg shadow-bronze/25" href="#" data-book-call>Book a Call</a>
         <a href="access.html#request-access" class="mt-2 block text-center text-[13px] font-semibold text-gunmetal hover:text-green motion-safe:transition">Request access</a>
       </div>
     </div>
@@ -258,12 +258,19 @@
   </section>
 
   <section id="speaker-intake" class="border-t border-gunmetal/10 bg-white/50 py-20 md:py-28">
-    <div class="mx-auto max-w-3xl px-5 md:px-8">
+    <div class="mx-auto max-w-4xl px-5 md:px-8">
       <p class="fly-in text-[11px] font-semibold uppercase tracking-[0.28em] text-green">Speaker intake</p>
       <h2 class="fly-in fly-stagger-1 mt-4 font-heading text-2xl font-semibold text-carbon md:text-3xl">Apply to speak</h2>
       <p class="fly-in fly-stagger-2 mt-4 text-gunmetal">Tell us about your expertise and the conversation you&apos;d bring to the room. We look for judgment, clarity, and respect for the format — not pitch theater.</p>
-      <div class="fly-in fly-stagger-3 mt-10 overflow-hidden rounded-3xl bg-white/80 shadow-lg shadow-carbon/5 ring-1 ring-gunmetal/10">
-        <iframe aria-label="Speaker Intake Form" title="Speaker Intake Form" frameborder="0" style="height:500px;width:99%;border:none;" src="https://forms.zohopublic.com/dealmakersllc1/form/SpeakerIntakeForm/formperma/Aea_N1QI1ug_ZZrZeQosFCAm4NMbW_eQ5sn5wb_ar1Y"></iframe>
+      <div class="fly-in fly-stagger-3 zoho-form-embed-wrap mt-10 rounded-3xl bg-white/80 p-2 shadow-lg shadow-carbon/5 ring-1 ring-gunmetal/10 md:p-3">
+        <iframe
+          class="zoho-form-embed"
+          data-zoho-form
+          title="Speaker Intake Form"
+          aria-label="Speaker Intake Form"
+          src="https://forms.zohopublic.com/dealmakersllc1/form/SpeakerIntakeForm/formperma/Aea_N1QI1ug_ZZrZeQosFCAm4NMbW_eQ5sn5wb_ar1Y"
+          scrolling="no"
+        ></iframe>
       </div>
     </div>
   </section>
@@ -445,6 +452,7 @@
   </script>
   <script src="scripts/site-config.js" defer></script>
   <script src="scripts/book-call.js" defer></script>
+  <script src="scripts/zoho-form-embed.js" defer></script>
   <script src="scripts/nav-active.js" defer></script>
   <script src="scripts/whatsapp-float.js" defer></script>
 </body>
