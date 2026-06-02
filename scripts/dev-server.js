@@ -8,7 +8,8 @@ const fs = require('fs');
 
 var root = path.join(__dirname, '..');
 var port = Number(process.env.PORT) || 5501;
-var host = process.env.HOST || '127.0.0.1';
+// Bind all interfaces in production (Hostinger sets PORT); localhost for local dev.
+var host = process.env.HOST || (process.env.PORT ? '0.0.0.0' : '127.0.0.1');
 
 var app = express();
 
