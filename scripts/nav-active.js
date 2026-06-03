@@ -13,8 +13,8 @@
       var raw = el.getAttribute('data-active-when') || '';
       var keys = raw.trim().split(/\s+/).filter(Boolean);
       if (keys.indexOf(stem) === -1) return;
-      el.classList.remove('text-gunmetal');
-      el.classList.add('text-carbon');
+      el.classList.remove('text-bone/80');
+      el.classList.add('text-bone');
     });
   }
 

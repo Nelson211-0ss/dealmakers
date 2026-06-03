@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
 /* Zoho form embeds — full form visible, page scrolls (not the iframe) */
 .zoho-form-embed-wrap {
   width: 100%;
@@ -15,4 +22,102 @@
   border: 0;
   background: transparent;
   transition: height 0.35s ease;
+}
+
+.site-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 2rem;
+  max-width: 12rem;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .site-logo {
+    max-height: 2.25rem;
+    max-width: 14rem;
+  }
+}
+
+.site-logo--footer {
+  max-height: 2.25rem;
+  max-width: 15rem;
+}
+
+@media (min-width: 768px) {
+  .site-logo--footer {
+    max-height: 2.5rem;
+    max-width: 16rem;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply font-heading text-2xl font-semibold tracking-tight text-carbon md:text-3xl lg:text-[2rem];
+  }
+
+  .section-title-light {
+    @apply font-heading text-2xl font-semibold tracking-tight text-bone md:text-3xl lg:text-[2rem];
+  }
+
+  .section-kicker {
+    @apply text-[11px] font-semibold uppercase tracking-[0.28em];
+  }
+
+  .dm-card {
+    @apply flex flex-col overflow-hidden rounded-2xl p-5 shadow-md ring-1 motion-safe:transition md:p-6;
+  }
+
+  .dm-card-head {
+    @apply flex items-center gap-3;
+  }
+
+  .dm-card-icon {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ring-1;
+  }
+
+  .dm-card-title {
+    @apply font-heading text-lg font-semibold leading-tight;
+  }
+
+  .dm-card-body {
+    @apply mt-3 flex-1 text-sm leading-relaxed;
+  }
+
+  .dm-card--green {
+    @apply bg-green text-bone shadow-green/25 ring-bone/20 hover:ring-bronze/45;
+  }
+
+  .dm-card--green .dm-card-icon {
+    @apply bg-bone/15 text-bronze ring-bone/10;
+  }
+
+  .dm-card--green .dm-card-body {
+    @apply text-bone/75;
+  }
+
+  .dm-card--carbon {
+    @apply bg-carbon text-bone shadow-carbon/30 ring-bronze/25 hover:ring-bronze/45;
+  }
+
+  .dm-card--carbon .dm-card-icon {
+    @apply bg-bronze/20 text-bronze ring-bronze/25;
+  }
+
+  .dm-card--carbon .dm-card-body {
+    @apply text-bone/75;
+  }
+
+  .dm-card--white {
+    @apply bg-white text-carbon shadow-sm ring-gunmetal/10 hover:ring-green/35;
+  }
+
+  .dm-card--white .dm-card-icon {
+    @apply bg-green/10 text-green ring-green/15;
+  }
+
+  .dm-card--white .dm-card-body {
+    @apply text-gunmetal;
+  }
 }

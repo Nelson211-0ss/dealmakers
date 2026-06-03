@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/logo/dealmakers-logo.png" type="image/png" />
   <title>Dealmakers | Real Estate | Austin, TX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preload" as="image" href="images/Violet%20Crowned%20Media_Deal%20Makers-4_websize.jpg" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/site.css" />
   <style>
     html {
-      scroll-padding-top: 124px;
+      scroll-padding-top: 100px;
     }
     @media (prefers-reduced-motion: no-preference) {
       html {
@@ -154,117 +155,124 @@
 <body class="bg-bone font-sans text-carbon antialiased selection:bg-bronze/25 selection:text-carbon">
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-gunmetal/10 bg-bone/95 backdrop-blur-xl">
-    <div class="mx-auto flex min-h-[5.75rem] max-w-7xl items-center justify-between gap-3 px-5 py-2 md:min-h-[6rem] md:gap-4 md:px-8 md:py-2.5">
-      <a href="index.html#hero" class="motion-safe:transition group flex items-center gap-3 text-carbon hover:opacity-80" aria-label="Dealmakers home">
-        <img src="images/DM%20BLACK%20TRANSPARENT.png" alt="" width="216" height="72" class="h-14 w-auto shrink-0 md:h-16" />
+  <header class="sticky top-0 z-50 border-b border-bone/10 bg-green backdrop-blur-xl">
+    <div class="mx-auto flex min-h-[4.5rem] max-w-7xl items-center justify-between gap-3 px-5 py-2 md:min-h-[4.75rem] md:gap-4 md:px-8 md:py-2.5">
+      <a href="index.html#hero" class="motion-safe:transition group flex shrink-0 items-center hover:opacity-90" aria-label="Dealmakers home">
+        <picture>
+          <source srcset="images/logo/dealmakers-logo.avif" type="image/avif" />
+          <img src="images/logo/dealmakers-logo.png" alt="Dealmakers" width="320" height="54" class="site-logo object-contain site-logo--header" />
+        </picture>
       </a>
       <nav class="hidden items-center gap-1 xl:gap-1.5 2xl:gap-2 lg:flex" aria-label="Primary">
-        <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-gunmetal hover:bg-gunmetal/[0.08] hover:text-carbon xl:text-base" href="index.html#hero" data-active-when="index">
-          <i data-feather="home" class="h-[18px] w-[18px] shrink-0 text-green xl:h-5 xl:w-5"></i>
+        <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-base" href="index.html#hero" data-active-when="index">
+          <i data-feather="home" class="h-[18px] w-[18px] shrink-0 text-bronze xl:h-5 xl:w-5"></i>
           Home
         </a>
+        <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-base" href="membership.html" data-active-when="membership">
+          <i data-feather="credit-card" class="h-[18px] w-[18px] shrink-0 text-bronze xl:h-5 xl:w-5"></i>
+          Membership
+        </a>
+        <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-base" href="sponsorship.html" data-active-when="sponsorship">
+          <i data-feather="award" class="h-[18px] w-[18px] shrink-0 text-bronze xl:h-5 xl:w-5"></i>
+          Sponsorship
+        </a>
+        <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-base" href="events.html" data-active-when="events">
+          <i data-feather="calendar" class="h-[18px] w-[18px] shrink-0 text-bronze xl:h-5 xl:w-5"></i>
+          Events
+        </a>
+        <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-base" href="apply.html" data-active-when="apply">
+          <i data-feather="mic" class="h-[18px] w-[18px] shrink-0 text-bronze xl:h-5 xl:w-5"></i>
+          Apply
+        </a>
         <div class="group/nav-abt relative">
-          <a href="launch-a-city.html" class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-gunmetal hover:bg-gunmetal/[0.08] hover:text-carbon xl:text-base" data-active-when="launch-a-city framework access how-it-works the-room">
-            <i data-feather="info" class="h-[18px] w-[18px] shrink-0 text-green xl:h-5 xl:w-5"></i>
+          <a href="about.html" class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-base" data-active-when="about launch-a-city framework access how-it-works the-room">
+            <i data-feather="info" class="h-[18px] w-[18px] shrink-0 text-bronze xl:h-5 xl:w-5"></i>
             <span class="inline-flex items-center gap-0.5">
               About
               <i data-feather="chevron-down" class="pointer-events-none h-4 w-4 opacity-55" aria-hidden="true"></i>
             </span>
           </a>
           <div class="pointer-events-none invisible absolute left-0 top-full z-[60] pt-2 opacity-0 transition duration-150 group-hover/nav-abt:pointer-events-auto group-hover/nav-abt:visible group-hover/nav-abt:opacity-100 group-focus-within/nav-abt:pointer-events-auto group-focus-within/nav-abt:visible group-focus-within/nav-abt:opacity-100" role="group" aria-label="About submenu">
-            <div class="pointer-events-auto min-w-[13.5rem] rounded-xl border border-gunmetal/10 bg-bone py-2 shadow-xl shadow-carbon/10 ring-1 ring-gunmetal/10 backdrop-blur-md">
-              <a href="launch-a-city.html" class="motion-safe:transition flex items-center gap-2.5 px-3 py-2.5 text-[14px] font-semibold tracking-tight text-gunmetal hover:bg-green/[0.07] hover:text-carbon xl:text-[15px]" data-active-when="launch-a-city">
-                <i data-feather="map" class="h-[17px] w-[17px] shrink-0 text-green"></i>
+            <div class="pointer-events-auto min-w-[13.5rem] rounded-xl border border-bone/15 bg-carbon py-2 shadow-xl shadow-carbon/10 ring-1 ring-gunmetal/10 backdrop-blur-md">
+              <a href="launch-a-city.html" class="motion-safe:transition flex items-center gap-2.5 px-3 py-2.5 text-[14px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-[15px]" data-active-when="launch-a-city">
+                <i data-feather="map" class="h-[17px] w-[17px] shrink-0 text-bronze"></i>
                 Launch a city
               </a>
-              <a href="framework.html" class="motion-safe:transition flex items-center gap-2.5 border-t border-gunmetal/10 px-3 py-2.5 text-[14px] font-semibold tracking-tight text-gunmetal hover:bg-green/[0.07] hover:text-carbon xl:text-[15px]" data-active-when="framework">
-                <i data-feather="book-open" class="h-[17px] w-[17px] shrink-0 text-green"></i>
+              <a href="framework.html" class="motion-safe:transition flex items-center gap-2.5 border-t border-bone/15 px-3 py-2.5 text-[14px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-[15px]" data-active-when="framework">
+                <i data-feather="book-open" class="h-[17px] w-[17px] shrink-0 text-bronze"></i>
                 Framework
               </a>
-              <a href="access.html" class="motion-safe:transition flex items-center gap-2.5 border-t border-gunmetal/10 px-3 py-2.5 text-[14px] font-semibold tracking-tight text-gunmetal hover:bg-green/[0.07] hover:text-carbon xl:text-[15px]" data-active-when="access">
-                <i data-feather="key" class="h-[17px] w-[17px] shrink-0 text-green"></i>
+              <a href="access.html" class="motion-safe:transition flex items-center gap-2.5 border-t border-bone/15 px-3 py-2.5 text-[14px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-[15px]" data-active-when="access">
+                <i data-feather="key" class="h-[17px] w-[17px] shrink-0 text-bronze"></i>
                 Access
               </a>
-              <a href="how-it-works.html" class="motion-safe:transition flex items-center gap-2.5 border-t border-gunmetal/10 px-3 py-2.5 text-[14px] font-semibold tracking-tight text-gunmetal hover:bg-green/[0.07] hover:text-carbon xl:text-[15px]" data-active-when="how-it-works">
-                <i data-feather="git-branch" class="h-[17px] w-[17px] shrink-0 text-green"></i>
+              <a href="how-it-works.html" class="motion-safe:transition flex items-center gap-2.5 border-t border-bone/15 px-3 py-2.5 text-[14px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-[15px]" data-active-when="how-it-works">
+                <i data-feather="git-branch" class="h-[17px] w-[17px] shrink-0 text-bronze"></i>
                 How it works
               </a>
-              <a href="the-room.html" class="motion-safe:transition flex items-center gap-2.5 border-t border-gunmetal/10 px-3 py-2.5 text-[14px] font-semibold tracking-tight text-gunmetal hover:bg-green/[0.07] hover:text-carbon xl:text-[15px]" data-active-when="the-room">
-                <i data-feather="layers" class="h-[17px] w-[17px] shrink-0 text-green"></i>
+              <a href="the-room.html" class="motion-safe:transition flex items-center gap-2.5 border-t border-bone/15 px-3 py-2.5 text-[14px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-[15px]" data-active-when="the-room">
+                <i data-feather="layers" class="h-[17px] w-[17px] shrink-0 text-bronze"></i>
                 The room
               </a>
             </div>
           </div>
         </div>
-        <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-gunmetal hover:bg-gunmetal/[0.08] hover:text-carbon xl:text-base" href="events.html" data-active-when="events">
-          <i data-feather="calendar" class="h-[18px] w-[18px] shrink-0 text-green xl:h-5 xl:w-5"></i>
-          Events
-        </a>
-        <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-gunmetal hover:bg-gunmetal/[0.08] hover:text-carbon xl:text-base" href="sponsorship.html" data-active-when="sponsorship">
-          <i data-feather="award" class="h-[18px] w-[18px] shrink-0 text-green xl:h-5 xl:w-5"></i>
-          Sponsorship
-        </a>
-        <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-gunmetal hover:bg-gunmetal/[0.08] hover:text-carbon xl:text-base" href="membership.html" data-active-when="membership">
-          <i data-feather="credit-card" class="h-[18px] w-[18px] shrink-0 text-green xl:h-5 xl:w-5"></i>
-          Membership
-        </a>
-        <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-gunmetal hover:bg-gunmetal/[0.08] hover:text-carbon xl:text-base" href="apply.html" data-active-when="apply">
-          <i data-feather="mic" class="h-[18px] w-[18px] shrink-0 text-green xl:h-5 xl:w-5"></i>
-          Apply
-        </a>
         <a class="motion-safe:transition shrink-0 rounded-full bg-bronze px-5 py-2.5 font-heading text-[12px] font-semibold uppercase tracking-[0.05em] text-carbon shadow-md shadow-bronze/20 hover:bg-bronze/90 xl:px-6" href="#" data-book-call>Book a Call</a>
       </nav>
-      <button type="button" id="menu-toggle" class="motion-safe:transition inline-flex items-center gap-2 rounded-lg px-2 py-2 text-[15px] font-semibold text-carbon hover:bg-gunmetal/[0.08] lg:hidden" aria-expanded="false" aria-controls="mobile-nav">
-        <i data-feather="menu" class="h-6 w-6 shrink-0 text-green"></i>
+      <button type="button" id="menu-toggle" class="motion-safe:transition inline-flex items-center gap-2 rounded-lg px-2 py-2 text-[15px] font-semibold text-bone hover:bg-bone/10 lg:hidden" aria-expanded="false" aria-controls="mobile-nav">
+        <i data-feather="menu" class="h-6 w-6 shrink-0 text-bronze"></i>
         Menu
       </button>
     </div>
-    <div id="mobile-nav" class="hidden border-t border-gunmetal/15 bg-bone px-5 py-4 lg:hidden">
+    <div id="mobile-nav" class="hidden border-t border-bone/15 bg-green px-5 py-4 lg:hidden">
       <div class="flex flex-col gap-0.5">
-        <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-gunmetal hover:text-carbon" href="index.html#hero" data-active-when="index">
-          <i data-feather="home" class="h-6 w-6 shrink-0 text-green"></i>
+        <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="index.html#hero" data-active-when="index">
+          <i data-feather="home" class="h-6 w-6 shrink-0 text-bronze"></i>
           Home
         </a>
-        <p class="pt-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gunmetal/55">About</p>
-        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-gunmetal/20 py-2 pl-3 text-[16px] font-semibold tracking-tight text-gunmetal hover:text-carbon" href="launch-a-city.html" data-active-when="launch-a-city">
-          <i data-feather="map" class="h-5 w-5 shrink-0 text-green"></i>
-          Launch a city
-        </a>
-        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-gunmetal/20 py-2 pl-3 text-[16px] font-semibold tracking-tight text-gunmetal hover:text-carbon" href="framework.html" data-active-when="framework">
-          <i data-feather="book-open" class="h-5 w-5 shrink-0 text-green"></i>
-          Framework
-        </a>
-        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-gunmetal/20 py-2 pl-3 text-[16px] font-semibold tracking-tight text-gunmetal hover:text-carbon" href="access.html" data-active-when="access">
-          <i data-feather="key" class="h-5 w-5 shrink-0 text-green"></i>
-          Access
-        </a>
-        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-gunmetal/20 py-2 pl-3 text-[16px] font-semibold tracking-tight text-gunmetal hover:text-carbon" href="how-it-works.html" data-active-when="how-it-works">
-          <i data-feather="git-branch" class="h-5 w-5 shrink-0 text-green"></i>
-          How it works
-        </a>
-        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-gunmetal/20 py-2 pl-3 text-[16px] font-semibold tracking-tight text-gunmetal hover:text-carbon" href="the-room.html" data-active-when="the-room">
-          <i data-feather="layers" class="h-5 w-5 shrink-0 text-green"></i>
-          The room
-        </a>
-        <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-gunmetal hover:text-carbon" href="events.html" data-active-when="events">
-          <i data-feather="calendar" class="h-6 w-6 shrink-0 text-green"></i>
-          Events
-        </a>
-        <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-gunmetal hover:text-carbon" href="sponsorship.html" data-active-when="sponsorship">
-          <i data-feather="award" class="h-6 w-6 shrink-0 text-green"></i>
-          Sponsorship
-        </a>
-        <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-gunmetal hover:text-carbon" href="membership.html" data-active-when="membership">
-          <i data-feather="credit-card" class="h-6 w-6 shrink-0 text-green"></i>
+        <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="membership.html" data-active-when="membership">
+          <i data-feather="credit-card" class="h-6 w-6 shrink-0 text-bronze"></i>
           Membership
         </a>
-        <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-gunmetal hover:text-carbon" href="apply.html" data-active-when="apply">
-          <i data-feather="mic" class="h-6 w-6 shrink-0 text-green"></i>
+        <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="sponsorship.html" data-active-when="sponsorship">
+          <i data-feather="award" class="h-6 w-6 shrink-0 text-bronze"></i>
+          Sponsorship
+        </a>
+        <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="events.html" data-active-when="events">
+          <i data-feather="calendar" class="h-6 w-6 shrink-0 text-bronze"></i>
+          Events
+        </a>
+        <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="apply.html" data-active-when="apply">
+          <i data-feather="mic" class="h-6 w-6 shrink-0 text-bronze"></i>
           Apply
         </a>
+        <p class="pt-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-bone/50">About</p>
+        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-bone/25 py-2 pl-3 text-[16px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="about.html" data-active-when="about">
+          <i data-feather="info" class="h-5 w-5 shrink-0 text-bronze"></i>
+          About overview
+        </a>
+        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-bone/25 py-2 pl-3 text-[16px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="launch-a-city.html" data-active-when="launch-a-city">
+          <i data-feather="map" class="h-5 w-5 shrink-0 text-bronze"></i>
+          Launch a city
+        </a>
+        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-bone/25 py-2 pl-3 text-[16px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="framework.html" data-active-when="framework">
+          <i data-feather="book-open" class="h-5 w-5 shrink-0 text-bronze"></i>
+          Framework
+        </a>
+        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-bone/25 py-2 pl-3 text-[16px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="access.html" data-active-when="access">
+          <i data-feather="key" class="h-5 w-5 shrink-0 text-bronze"></i>
+          Access
+        </a>
+        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-bone/25 py-2 pl-3 text-[16px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="how-it-works.html" data-active-when="how-it-works">
+          <i data-feather="git-branch" class="h-5 w-5 shrink-0 text-bronze"></i>
+          How it works
+        </a>
+        <a class="motion-safe:transition inline-flex items-center gap-3 border-l-2 border-bone/25 py-2 pl-3 text-[16px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="the-room.html" data-active-when="the-room">
+          <i data-feather="layers" class="h-5 w-5 shrink-0 text-bronze"></i>
+          The room
+        </a>
         <a class="mt-3 block rounded-full bg-bronze px-6 py-3.5 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.05em] text-carbon shadow-lg shadow-bronze/25" href="#" data-book-call>Book a Call</a>
-        <a href="access.html#request-access" class="mt-2 block text-center text-[13px] font-semibold text-gunmetal hover:text-green motion-safe:transition">Request access</a>
+        <a href="access.html#request-access" class="mt-2 block text-center text-[13px] font-semibold text-bone/70 hover:text-bone motion-safe:transition">Request access</a>
       </div>
     </div>
   </header>
@@ -339,7 +347,7 @@
       <i data-feather="chevron-right" class="h-6 w-6"></i>
     </button>
 
-    <div class="relative z-10 mt-auto border-t border-bone/10 bg-carbon/80 backdrop-blur-md">
+    <div class="relative z-10 mt-auto overflow-hidden border-t border-bone/10 bg-carbon/80 backdrop-blur-md">
       <div class="flex w-max animate-marquee whitespace-nowrap py-3.5 text-[10px] font-semibold uppercase tracking-[0.4em] text-bone/45">
         <span class="px-10">East End Ballroom</span>
         <span class="px-10">Lucky Arrow Retreat</span>
@@ -401,16 +409,16 @@
   </section>
 
   <!-- Problem -->
-  <section id="problem" class="relative overflow-hidden rounded-t-[2rem] bg-gradient-to-b from-bone via-bone to-gunmetal/[0.04] py-20 md:py-28">
+  <section id="problem" class="relative overflow-hidden rounded-t-[2rem] bg-bone py-14 md:py-20">
     <div class="pointer-events-none absolute right-0 top-0 h-[min(80vw,520px)] w-[min(80vw,520px)] translate-x-1/3 -translate-y-1/2 rounded-full bg-green/[0.07] blur-3xl" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-7xl px-5 md:px-8">
       <div class="max-w-4xl">
-        <h2 class="fly-in font-heading text-2xl font-semibold uppercase leading-snug tracking-wide text-carbon md:text-4xl md:leading-tight">
+        <h2 class="fly-in section-title uppercase leading-snug tracking-wide md:leading-tight">
           Most networks don't produce <span class="text-bronze">real outcomes.</span>
         </h2>
       </div>
-      <div class="mt-14 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div class="fly-in fly-from-left max-w-xl rounded-3xl bg-white/60 p-8 text-[17px] leading-relaxed text-gunmetal shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm md:p-10">
+      <div class="mt-8 grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+        <div class="fly-in fly-from-left max-w-xl rounded-2xl bg-white/60 p-6 text-[17px] leading-relaxed text-gunmetal shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm md:p-8">
           <div class="flex gap-4">
             <span class="text-bronze"><i data-feather="alert-circle" class="h-6 w-6"></i></span>
             <div>
@@ -430,7 +438,7 @@
               loading="lazy"
             />
           </div>
-          <div class="relative flex flex-col justify-center rounded-3xl bg-gradient-to-br from-gunmetal/[0.07] to-bone/80 p-8 ring-1 ring-gunmetal/10 backdrop-blur-sm md:p-10">
+          <div class="relative flex flex-col justify-center rounded-2xl bg-white p-6 ring-1 ring-gunmetal/10 md:p-8">
           <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-bronze">The alternative</p>
           <p class="mt-6 text-xl font-medium leading-snug text-carbon">
             Dealmakers is a working room built for people who deploy capital, build companies, and execute deals.
@@ -441,7 +449,7 @@
           </div>
         </div>
       </div>
-      <div class="fly-in mt-14 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+      <div class="fly-in mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
         <div class="overflow-hidden rounded-2xl ring-1 ring-gunmetal/10 shadow-md">
           <img src="images/Violet%20Crowned%20Media_Deal%20Makers-7_websize.jpg" alt="" class="h-36 w-full object-cover transition duration-500 hover:scale-105 motion-safe:transition-transform md:h-44" width="800" height="600" loading="lazy" />
         </div>
@@ -478,70 +486,85 @@
   </section>
 
   <!-- Explore -->
-  <section id="explore" class="relative overflow-hidden bg-gradient-to-b from-bone via-bone to-green/[0.06] py-20 md:py-28">
-    <div class="pointer-events-none absolute left-1/2 top-0 h-[24rem] w-[min(100%,48rem)] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(31,61,43,0.14),transparent_65%)]" aria-hidden="true"></div>
+  <section id="explore" class="relative overflow-hidden bg-bone py-14 md:py-20">
     <div class="relative mx-auto max-w-7xl px-5 md:px-8">
-      <p class="fly-in text-[11px] font-semibold uppercase tracking-[0.28em] text-green">Go deeper</p>
-      <h2 class="fly-in fly-stagger-1 mt-4 max-w-3xl font-heading text-2xl font-semibold uppercase leading-tight tracking-wide text-carbon md:text-[2rem]">
+      <p class="fly-in section-kicker text-green">Go deeper</p>
+      <h2 class="fly-in fly-stagger-1 section-title mt-3 max-w-3xl uppercase leading-tight tracking-wide">
         Everything in the room, <span class="text-bronze">by chapter.</span>
       </h2>
-      <p class="fly-in fly-stagger-2 mt-5 max-w-2xl text-gunmetal">Each page mirrors how we run the working room — same palette, same tone, full detail.</p>
+      <p class="fly-in fly-stagger-2 mt-4 max-w-2xl text-gunmetal">Each page mirrors how we run the working room — same palette, same tone, full detail.</p>
 
-      <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        <a href="the-room.html" class="fly-in fly-stagger-1 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9">
-          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="layers" class="h-5 w-5"></i></span>
-          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">The room</h3>
-          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Real estate, capital, growth, life — the four filters that define who belongs here.</p>
-          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="the-room.html" class="fly-in fly-stagger-1 group dm-card dm-card--green">
+          <div class="dm-card-head">
+            <span class="dm-card-icon"><i data-feather="layers" class="h-5 w-5"></i></span>
+            <h3 class="dm-card-title group-hover:text-bronze motion-safe:transition">The room</h3>
+          </div>
+          <p class="dm-card-body">Real estate, capital, growth, life — the four filters that define who belongs here.</p>
+          <span class="mt-4 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="how-it-works.html" class="fly-in fly-stagger-2 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9">
-          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="git-branch" class="h-5 w-5"></i></span>
-          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">How it works</h3>
-          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Community, demonstrated expertise, and real opportunities — the rhythm of every session.</p>
-          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="how-it-works.html" class="fly-in fly-stagger-2 group dm-card dm-card--green">
+          <div class="dm-card-head">
+            <span class="dm-card-icon"><i data-feather="git-branch" class="h-5 w-5"></i></span>
+            <h3 class="dm-card-title group-hover:text-bronze motion-safe:transition">How it works</h3>
+          </div>
+          <p class="dm-card-body">Community, demonstrated expertise, and real opportunities — the rhythm of every session.</p>
+          <span class="mt-4 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="events.html" class="fly-in fly-stagger-3 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9 sm:col-span-2 lg:col-span-1">
-          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="calendar" class="h-5 w-5"></i></span>
-          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Events</h3>
-          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">CEO format flagship rooms, past schedule, immersions — and where to request access.</p>
-          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="events.html" class="fly-in fly-stagger-3 group dm-card dm-card--green sm:col-span-2 lg:col-span-1">
+          <div class="dm-card-head">
+            <span class="dm-card-icon"><i data-feather="calendar" class="h-5 w-5"></i></span>
+            <h3 class="dm-card-title group-hover:text-bronze motion-safe:transition">Events</h3>
+          </div>
+          <p class="dm-card-body">CEO format flagship rooms, past schedule, immersions — and where to request access.</p>
+          <span class="mt-4 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="access.html" class="fly-in fly-stagger-4 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9">
-          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="key" class="h-5 w-5"></i></span>
-          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Access</h3>
-          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Curated and welcoming — what access means, what it doesn&apos;t, and who the room is for.</p>
-          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="access.html" class="fly-in fly-stagger-4 group dm-card dm-card--green">
+          <div class="dm-card-head">
+            <span class="dm-card-icon"><i data-feather="key" class="h-5 w-5"></i></span>
+            <h3 class="dm-card-title group-hover:text-bronze motion-safe:transition">Access</h3>
+          </div>
+          <p class="dm-card-body">Curated and welcoming — what access means, what it doesn&apos;t, and who the room is for.</p>
+          <span class="mt-4 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="membership.html#membership-inquiry" class="fly-in fly-stagger-5 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9">
-          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="credit-card" class="h-5 w-5"></i></span>
-          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Membership</h3>
-          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Annual rhythm, member benefits, and how to stay closest to the deal flow.</p>
-          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="membership.html" class="fly-in fly-stagger-5 group dm-card dm-card--green">
+          <div class="dm-card-head">
+            <span class="dm-card-icon"><i data-feather="credit-card" class="h-5 w-5"></i></span>
+            <h3 class="dm-card-title group-hover:text-bronze motion-safe:transition">Membership</h3>
+          </div>
+          <p class="dm-card-body">Annual rhythm from $500/year — member benefits and how to stay closest to the deal flow.</p>
+          <span class="mt-4 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="launch-a-city.html" class="fly-in fly-stagger-6 group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9">
-          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="map" class="h-5 w-5"></i></span>
-          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Launch a city</h3>
-          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Own the Dealmakers room in your market — economics, expectations, and alignment.</p>
-          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="launch-a-city.html" class="fly-in fly-stagger-6 group dm-card dm-card--green">
+          <div class="dm-card-head">
+            <span class="dm-card-icon"><i data-feather="map" class="h-5 w-5"></i></span>
+            <h3 class="dm-card-title group-hover:text-bronze motion-safe:transition">Launch a city</h3>
+          </div>
+          <p class="dm-card-body">Own the Dealmakers room in your market — economics, expectations, and alignment.</p>
+          <span class="mt-4 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Open <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="sponsorship.html#sponsorship-inquiry" class="fly-in group relative flex flex-col overflow-hidden rounded-3xl bg-gradient-to-br from-carbon via-carbon to-green/90 p-8 text-bone shadow-xl shadow-carbon/30 ring-1 ring-bronze/25 motion-safe:transition hover:shadow-2xl hover:ring-bronze/45 md:p-9 sm:col-span-2 lg:col-span-1">
-          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bronze/20 text-bronze ring-1 ring-bronze/25"><i data-feather="trending-up" class="h-5 w-5"></i></span>
-          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Sponsorship</h3>
-          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Tiered partnerships from exhibitor to featured moderator — engineered for recurring presence beside real deal flow.</p>
-          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">View tiers <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="sponsorship.html" class="fly-in group dm-card dm-card--carbon sm:col-span-2 lg:col-span-1">
+          <div class="dm-card-head">
+            <span class="dm-card-icon"><i data-feather="trending-up" class="h-5 w-5"></i></span>
+            <h3 class="dm-card-title group-hover:text-bronze motion-safe:transition">Sponsorship</h3>
+          </div>
+          <p class="dm-card-body">Tiered partnerships from exhibitor to featured moderator — engineered for recurring presence beside real deal flow.</p>
+          <span class="mt-4 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">View tiers <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
-        <a href="apply.html#speaker-intake" class="fly-in group relative flex flex-col overflow-hidden rounded-3xl bg-green p-8 text-bone shadow-lg shadow-green/35 ring-1 ring-bone/20 motion-safe:transition hover:shadow-xl hover:ring-bronze/45 md:p-9 sm:col-span-2 lg:col-span-2">
-          <span class="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-bone/15 text-bronze ring-1 ring-bone/10"><i data-feather="mic" class="h-5 w-5"></i></span>
-          <h3 class="relative z-10 mt-6 font-heading text-lg font-semibold text-bone group-hover:text-bronze motion-safe:transition">Apply to speak</h3>
-          <p class="relative z-10 mt-3 flex-1 text-sm leading-relaxed text-bone/75">Bring judgment, facilitate tension, and leave the room with something worth carrying.</p>
-          <span class="relative z-10 mt-6 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Speaker criteria <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
+        <a href="apply.html" class="fly-in group dm-card dm-card--green sm:col-span-2 lg:col-span-2">
+          <div class="dm-card-head">
+            <span class="dm-card-icon"><i data-feather="mic" class="h-5 w-5"></i></span>
+            <h3 class="dm-card-title group-hover:text-bronze motion-safe:transition">Apply to speak</h3>
+          </div>
+          <p class="dm-card-body">Bring judgment, facilitate tension, and leave the room with something worth carrying.</p>
+          <span class="mt-4 inline-flex items-center gap-2 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Speaker criteria <i data-feather="arrow-right" class="h-3.5 w-3.5 motion-safe:transition-transform group-hover:translate-x-0.5"></i></span>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section id="contact" class="relative overflow-hidden bg-bone py-20 md:py-28">
+  <section id="contact" class="relative overflow-hidden bg-bone py-14 md:py-20">
     <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_0%_100%,rgba(31,61,43,0.07),transparent)]" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-7xl px-5 md:px-8">
       <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -557,7 +580,7 @@
           <div class="absolute inset-0 bg-gradient-to-t from-carbon/55 to-transparent" aria-hidden="true"></div>
         </div>
         <div class="fly-in fly-from-right">
-          <h2 class="max-w-3xl font-heading text-2xl font-semibold leading-snug text-carbon md:text-4xl">If this feels like your kind of room — we'd like to hear from you.</h2>
+          <h2 class="section-title max-w-3xl leading-snug">If this feels like your kind of room — we'd like to hear from you.</h2>
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="#" data-book-call class="motion-safe:transition inline-flex items-center gap-2 rounded-full bg-bronze px-8 py-4 font-heading text-[11px] font-semibold uppercase tracking-[0.2em] text-carbon shadow-lg shadow-bronze/25 hover:bg-bronze/90">
               <span>Book a Call with Dani</span>
@@ -578,9 +601,11 @@
     <div class="relative z-10 mx-auto max-w-7xl px-5 pb-12 pt-16 md:px-8 md:pt-20">
       <div class="grid gap-14 lg:grid-cols-12 lg:gap-10">
         <div class="fly-in fly-from-left lg:col-span-5">
-          <a href="index.html#hero" class="flex items-center gap-3 text-bone motion-safe:transition hover:text-bronze">
-            <img src="images/DM%20BLACK%20TRANSPARENT.png" alt="" width="200" height="67" class="h-14 w-auto shrink-0 brightness-0 invert md:h-16" />
-            <span class="font-heading text-[13px] font-bold tracking-[0.28em]">DEALMAKERS</span>
+          <a href="index.html#hero" class="inline-flex motion-safe:transition hover:opacity-90" aria-label="Dealmakers home">
+            <picture>
+              <source srcset="images/logo/dealmakers-logo.avif" type="image/avif" />
+              <img src="images/logo/dealmakers-logo.png" alt="Dealmakers" width="320" height="54" class="site-logo object-contain site-logo--footer" />
+            </picture>
           </a>
           <p class="mt-6 max-w-md text-[15px] leading-relaxed text-bone/60">
             Private, curated room for real estate operators, investors, and capital allocators.
@@ -599,6 +624,7 @@
           <div>
             <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-bronze">Explore</p>
             <ul class="mt-5 space-y-3 text-[14px] text-bone/70">
+              <li><a class="hover:text-bronze motion-safe:transition" href="about.html">About</a></li>
               <li><a class="hover:text-bronze motion-safe:transition" href="the-room.html">The room</a></li>
               <li><a class="hover:text-bronze motion-safe:transition" href="how-it-works.html">How it works</a></li>
               <li><a class="hover:text-bronze motion-safe:transition" href="events.html">Events</a></li>
@@ -888,6 +914,6 @@
     <script src="scripts/site-config.js" defer></script>
   <script src="scripts/book-call.js" defer></script>
 <script src="scripts/nav-active.js" defer></script>
-  <script src="scripts/whatsapp-float.js" defer></script>
+  <script src="scripts/email-float.js" defer></script>
 </body>
 </html>
