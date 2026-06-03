@@ -17,13 +17,18 @@
       ? window.DEALMAKERS_EMAIL_BODY
       : "Hi — I'd like to connect about Dealmakers.";
 
-  var url =
-    'mailto:' +
-    encodeURIComponent(email) +
-    '?subject=' +
-    encodeURIComponent(subject) +
-    '&body=' +
-    encodeURIComponent(body);
+  function mailtoUrl(addr) {
+    return (
+      'mailto:' +
+      addr +
+      '?subject=' +
+      encodeURIComponent(subject) +
+      '&body=' +
+      encodeURIComponent(body)
+    );
+  }
+
+  var url = mailtoUrl(email);
 
   var pulse = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 

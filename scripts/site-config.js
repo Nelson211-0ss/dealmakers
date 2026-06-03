@@ -1,10 +1,12 @@
 /**
- * Dealmakers site URLs — update Calendly here; forms stay on Zoho.
+ * Dealmakers site URLs — update Calendly and social links here; forms stay on Zoho.
  * Set requestAccess when the dedicated Request Access embed URL is available.
  */
 window.DEALMAKERS_SITE = {
   calendlyUrl: 'https://calendly.com/dani-dealmakersus/30min',
-  contactEmail: 'info@dealmakersus.com',
+  contactEmail: 'deals@dealmakersus.com',
+  linkedinUrl: 'https://www.linkedin.com/company/dealmakers-us/?viewAsMember=true',
+  instagramUrl: 'https://www.instagram.com/dealmakers_us/',
   forms: {
     membershipInquiry:
       'https://forms.zohopublic.com/dealmakersllc1/form/MembershipInquiryForm/formperma/RpZ_jsKGUB8pLAfHX5HCcAjN932aduq6LnFcmR36OY4',
