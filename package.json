@@ -2,7 +2,7 @@
   "name": "dealmakers",
   "private": true,
   "scripts": {
-    "build": "npm run build:css",
+    "build": "node scripts/vercel-build.js",
     "build:css": "tailwindcss -i ./src/tailwind.input.css -o ./css/site.css --minify",
     "dev": "node scripts/dev-server.js",
     "start": "node server.js"
