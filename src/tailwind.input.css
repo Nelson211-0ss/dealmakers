@@ -62,7 +62,7 @@
   }
 
   .section-kicker {
-    @apply text-[11px] font-semibold uppercase tracking-[0.28em];
+    @apply font-heading text-sm font-semibold uppercase tracking-[0.2em] md:text-base;
   }
 
   .dm-card {
