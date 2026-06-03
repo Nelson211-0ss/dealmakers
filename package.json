@@ -6,7 +6,8 @@
     "vercel-build": "npm run build:css && sh scripts/vercel-build.sh",
     "build:css": "tailwindcss -i ./src/tailwind.input.css -o ./css/site.css --minify",
     "dev": "node scripts/dev-server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "optimize:images": "sh scripts/optimize-images.sh"
   },
   "dependencies": {
     "express": "^4.21.2",

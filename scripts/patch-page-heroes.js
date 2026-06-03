@@ -26,20 +26,20 @@ const pages = {
   'membership.html': {
     img: 'images/Dealmakers_0057.jpg',
     pos: 'object-[center_35%]',
-    w: 3072,
-    h: 2048,
+    w: 1920,
+    h: 1280,
   },
   'events.html': {
     img: 'images/Dealmakers_0040.jpg',
     pos: 'object-[center_40%]',
-    w: 3072,
-    h: 2048,
+    w: 1920,
+    h: 1280,
   },
   'apply.html': {
     img: 'images/Dealmakers_0125.jpg',
     pos: 'object-[center_45%]',
-    w: 3072,
-    h: 2048,
+    w: 1920,
+    h: 1280,
   },
   'about.html': {
     img: 'images/Violet%20Crowned%20Media_Deal%20Makers-58_websize.jpg',
@@ -56,8 +56,8 @@ const pages = {
   'launch-a-city.html': {
     img: 'images/DealmakersNovember_0003.jpg',
     pos: 'object-center',
-    w: 4644,
-    h: 3096,
+    w: 1920,
+    h: 1280,
   },
   'contact.html': {
     img: 'images/Violet%20Crowned%20Media_Deal%20Makers-4_websize.jpg',
@@ -93,7 +93,7 @@ const frameworkOld = `  <section class="relative overflow-hidden bg-bone pb-14 p
     <div class="relative mx-auto grid max-w-7xl gap-12 px-5 md:grid-cols-2 md:gap-14 md:px-8 lg:items-center">`;
 const frameworkNew = `  <section class="page-hero page-hero--light pb-14 pt-12 md:pb-20 md:pt-16">
     <div class="page-hero__bg" aria-hidden="true">
-      <img src="images/Dealmakers_0040.jpg" alt="" class="object-[center_40%] opacity-35" width="3072" height="2048" loading="eager" />
+      <img src="images/Dealmakers_0040.jpg" alt="" class="object-[center_40%] opacity-35" width="1920" height="1280" loading="eager" />
       <div class="page-hero__scrim"></div>
       <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_90%_-10%,rgba(197,163,125,0.14),transparent)]"></div>
     </div>
