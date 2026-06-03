@@ -280,8 +280,8 @@
   <!-- Hero — full-viewport image slider -->
   <section id="hero" class="relative flex min-h-[100svh] flex-col bg-carbon text-bone">
     <div class="pointer-events-none absolute inset-0 z-[2]" aria-hidden="true">
-      <div class="absolute inset-0 bg-gradient-to-r from-carbon via-carbon/75 to-carbon/35 md:from-carbon md:via-carbon/55 md:to-transparent"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-carbon/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-green/90 via-green/70 to-green/35 md:from-green/95 md:via-green/60 md:to-green/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-green/85 via-green/15 to-green/35"></div>
     </div>
     <div id="hero-slides" class="absolute inset-0 z-0" aria-hidden="true">
       <div class="hero-slide is-active">
@@ -412,48 +412,81 @@
   <section id="problem" class="relative overflow-hidden rounded-t-[2rem] bg-bone py-14 md:py-20">
     <div class="pointer-events-none absolute right-0 top-0 h-[min(80vw,520px)] w-[min(80vw,520px)] translate-x-1/3 -translate-y-1/2 rounded-full bg-green/[0.07] blur-3xl" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-7xl px-5 md:px-8">
-      <div class="max-w-4xl">
-        <h2 class="fly-in section-title uppercase leading-snug tracking-wide md:leading-tight">
+      <div class="fly-in max-w-3xl">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.28em] text-gunmetal">Why this room exists</p>
+        <h2 class="mt-3 section-title uppercase leading-snug tracking-wide md:leading-tight">
           Most networks don't produce <span class="text-bronze">real outcomes.</span>
         </h2>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-gunmetal md:text-[17px]">The gap isn't effort — it's structure. One side collects contacts. The other builds continuity.</p>
       </div>
-      <div class="mt-8 grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
-        <div class="fly-in fly-from-left max-w-xl rounded-2xl bg-white/60 p-6 text-[17px] leading-relaxed text-gunmetal shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm md:p-8">
-          <div class="flex gap-4">
-            <span class="text-bronze"><i data-feather="alert-circle" class="h-6 w-6"></i></span>
-            <div>
-              <p class="text-carbon">They collect business cards. They talk. Nothing carries forward.</p>
-              <p class="mt-4 text-gunmetal/90">No continuity. No judgment. No follow-through.</p>
-            </div>
-          </div>
-        </div>
-        <div class="fly-in fly-from-right flex flex-col gap-6">
-          <div class="img-frame-fill img-frame--16-10 img-frame--lg"><img
-              src="images/Violet%20Crowned%20Media_Deal%20Makers-4_websize.jpg"
-              alt="Operators in focused conversation at Dealmakers"
-              class="
+
+      <div class="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-8 lg:items-stretch">
+        <article class="fly-in fly-from-left flex h-full flex-col overflow-hidden rounded-3xl bg-white/80 shadow-md ring-1 ring-gunmetal/10">
+          <div class="relative aspect-[16/10] shrink-0 overflow-hidden bg-gunmetal/5">
+            <img
+              src="images/Violet%20Crowned%20Media_Deal%20Makers-64_websize.jpg"
+              alt="Typical networking — attention on the phone, not the room"
+              class="absolute inset-0 h-full w-full object-cover object-[center_35%]"
               width="1600"
               height="1067"
               loading="lazy"
             />
+            <div class="absolute inset-0 bg-gradient-to-t from-carbon/25 to-transparent" aria-hidden="true"></div>
           </div>
-          <div class="relative flex flex-col justify-center rounded-2xl bg-white p-6 ring-1 ring-gunmetal/10 md:p-8">
-            <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-bronze">The alternative</p>
-            <p class="mt-6 text-xl font-medium leading-snug text-carbon">
-              Dealmakers is a working room built for people who deploy capital, build companies, and execute deals.
-            </p>
-            <p class="mt-5 text-sm leading-relaxed text-gunmetal">
-              Dealmakers is a private, curated room where real estate, capital, and execution converge.
-            </p>
+          <div class="flex flex-1 flex-col p-6 md:p-8">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gunmetal/10 text-gunmetal"><i data-feather="alert-circle" class="h-5 w-5"></i></span>
+              <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gunmetal">The problem</p>
+            </div>
+            <p class="mt-5 text-lg font-medium leading-snug text-carbon">They collect business cards. They talk. Nothing carries forward.</p>
+            <ul class="mt-5 space-y-3 text-sm leading-relaxed text-gunmetal">
+              <li class="flex gap-3"><i data-feather="x" class="mt-0.5 h-4 w-4 shrink-0 text-gunmetal/50"></i><span>No continuity from one event to the next</span></li>
+              <li class="flex gap-3"><i data-feather="x" class="mt-0.5 h-4 w-4 shrink-0 text-gunmetal/50"></i><span>No judgment about who belongs in the room</span></li>
+              <li class="flex gap-3"><i data-feather="x" class="mt-0.5 h-4 w-4 shrink-0 text-gunmetal/50"></i><span>No follow-through after the handshake</span></li>
+            </ul>
           </div>
-        </div>
+        </article>
+
+        <article class="fly-in fly-from-right flex h-full flex-col overflow-hidden rounded-3xl bg-green text-bone shadow-lg shadow-green/20 ring-1 ring-bone/15">
+          <div class="relative aspect-[16/10] shrink-0 overflow-hidden">
+            <img
+              src="images/Dealmakers_0124.jpg"
+              alt="Operators in focused conversation at Dealmakers"
+              class="absolute inset-0 h-full w-full object-cover object-center"
+              width="3072"
+              height="2048"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-green/80 via-green/20 to-transparent" aria-hidden="true"></div>
+          </div>
+          <div class="flex flex-1 flex-col p-6 md:p-8">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-bone/15 text-bronze"><i data-feather="check-circle" class="h-5 w-5"></i></span>
+              <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-bronze">The alternative</p>
+            </div>
+            <p class="mt-5 text-lg font-medium leading-snug text-bone">A working room built for people who deploy capital, build companies, and execute deals.</p>
+            <p class="mt-4 text-sm leading-relaxed text-bone/75">Dealmakers is a private, curated room where real estate, capital, and execution converge — with the rhythm to turn conversations into outcomes.</p>
+            <ul class="mt-5 space-y-3 text-sm leading-relaxed text-bone/80">
+              <li class="flex gap-3"><i data-feather="check" class="mt-0.5 h-4 w-4 shrink-0 text-bronze"></i><span>Curated access, not an open invite list</span></li>
+              <li class="flex gap-3"><i data-feather="check" class="mt-0.5 h-4 w-4 shrink-0 text-bronze"></i><span>Judgment-heavy conversation, not pitch theater</span></li>
+              <li class="flex gap-3"><i data-feather="check" class="mt-0.5 h-4 w-4 shrink-0 text-bronze"></i><span>Follow-through built into how the room runs</span></li>
+            </ul>
+          </div>
+        </article>
       </div>
-      <div class="fly-in mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-        <div class="img-frame img-frame--4-3"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-64_websize.jpg" alt="Typical networking — attention elsewhere" class=" object-[center_35%] transition duration-500 hover:scale-105 motion-safe:transition-transform" width="1600" height="1067" loading="lazy" />
+
+      <div class="fly-in mt-8 grid gap-3 sm:grid-cols-3">
+        <div class="rounded-2xl bg-gunmetal/[0.05] px-5 py-4 ring-1 ring-gunmetal/5">
+          <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-bronze">Real estate</p>
+          <p class="mt-1 text-sm font-medium text-carbon">Operators &amp; investors executing deals</p>
         </div>
-        <div class="img-frame img-frame--4-3"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-26_websize.jpg" alt="Real conversation between operators" class=" object-[65%_center] transition duration-500 hover:scale-105 motion-safe:transition-transform" width="1600" height="1067" loading="lazy" />
+        <div class="rounded-2xl bg-gunmetal/[0.05] px-5 py-4 ring-1 ring-gunmetal/5">
+          <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-bronze">Capital</p>
+          <p class="mt-1 text-sm font-medium text-carbon">Relationships that move paperwork</p>
         </div>
-        <div class="img-frame img-frame--4-3 col-span-2 md:col-span-1"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-65_websize.jpg" alt="Capital and execution in the same room" class=" object-center transition duration-500 hover:scale-105 motion-safe:transition-transform" width="1600" height="1067" loading="lazy" />
+        <div class="rounded-2xl bg-gunmetal/[0.05] px-5 py-4 ring-1 ring-gunmetal/5">
+          <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-bronze">Execution</p>
+          <p class="mt-1 text-sm font-medium text-carbon">Continuity from first conversation forward</p>
         </div>
       </div>
     </div>
@@ -564,13 +597,13 @@
     <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_0%_100%,rgba(31,61,43,0.07),transparent)]" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-7xl px-5 md:px-8">
       <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div class="fly-in fly-from-left group relative min-h-[240px] overflow-hidden rounded-3xl bg-gunmetal/10 shadow-xl shadow-carbon/15 ring-1 ring-gunmetal/10 lg:min-h-[320px]">
+        <div class="fly-in fly-from-left group img-frame-fill img-frame--16-10 img-frame--xl img-frame--lg min-h-[260px] lg:min-h-[360px]">
           <img
-            src="images/Violet%20Crowned%20Media_Deal%20Makers-26_websize.jpg"
+            src="images/Dealmakers_0057.jpg"
             alt="Dealmakers community gathering"
-            class="absolute inset-0 h-full w-full object-cover object-[65%_center] motion-safe:transition motion-safe:duration-700 group-hover:scale-[1.02]"
-            width="1600"
-            height="1067"
+            class="object-[center_35%] motion-safe:transition motion-safe:duration-700 group-hover:scale-[1.02]"
+            width="3072"
+            height="2048"
             loading="lazy"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-carbon/55 to-transparent" aria-hidden="true"></div>

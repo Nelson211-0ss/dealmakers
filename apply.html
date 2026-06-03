@@ -209,8 +209,12 @@
     </div>
   </header>
 
-  <section class="relative overflow-hidden bg-carbon text-bone noise-carbon">
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_20%_0%,rgba(197,163,125,0.14),transparent)]" aria-hidden="true"></div>
+  <section class="page-hero noise-carbon">
+    <div class="page-hero__bg" aria-hidden="true">
+      <img src="images/Dealmakers_0125.jpg" alt="" class="object-[center_45%]" width="3072" height="2048" loading="eager" fetchpriority="high" />
+      <div class="page-hero__scrim"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_20%_0%,rgba(197,163,125,0.14),transparent)]"></div>
+    </div>
     <div class="relative z-10 mx-auto max-w-7xl px-5 pb-16 pt-28 md:px-8 md:pb-20 md:pt-32">
       <nav class="text-[11px] font-medium uppercase tracking-[0.22em] text-bone/45" aria-label="Breadcrumb">
         <a href="index.html#hero" class="hover:text-bronze motion-safe:transition">Home</a>
@@ -222,8 +226,8 @@
       <p class="fly-in fly-stagger-2 mt-6 max-w-2xl text-base leading-relaxed text-bone/70 md:text-lg">What we look for when someone steps to the front of the room.</p>
       <div class="fly-in fly-stagger-3 mt-10 btn-row">
         <a href="#speaker-intake" class="btn btn-green motion-safe:transition shadow-lg shadow-green/25">Apply to speak</a>
-        <a href="#" data-book-call class="motion-safe:transition inline-flex items-center gap-2 rounded-full border border-bone/35 bg-bone/5 px-7 py-3.5 font-heading text-[11px] font-semibold uppercase tracking-[0.2em] text-bone hover:border-bronze hover:text-bronze">Book a Call with Dani</a>
-        <a href="index.html#explore" class="motion-safe:transition inline-flex items-center gap-2 rounded-full border border-bone/35 bg-bone/5 px-7 py-3.5 font-heading text-[11px] font-semibold uppercase tracking-[0.2em] text-bone hover:border-bronze hover:text-bronze">All chapters</a>
+        <a href="#" data-book-call class="btn btn-outline-dark motion-safe:transition">Book a Call with Dani</a>
+        <a href="index.html#explore" class="btn btn-outline-dark motion-safe:transition">All chapters</a>
       </div>
     </div>
   </section>
@@ -233,8 +237,8 @@
     <div class="relative mx-auto max-w-7xl px-5 md:px-8">
       <div class="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-14">
         <div class="fly-in fly-from-left lg:col-span-5">
-          <div class="overflow-hidden rounded-3xl shadow-2xl ring-1 ring-gunmetal/15">
-            <img src="images/Dealmakers_0057.jpg" alt="Speaker addressing the Dealmakers room" class="aspect-[4/5] w-full object-cover object-[center_35%] md:aspect-auto md:min-h-[380px]" width="3072" height="2048" loading="lazy" />
+          <div class="img-frame img-frame--4-3 img-frame--lg md:min-h-[380px]">
+            <img src="images/Dealmakers_0057.jpg" alt="Speaker addressing the Dealmakers room" class="object-[center_35%]" width="3072" height="2048" loading="lazy" />
           </div>
         </div>
         <div class="lg:col-span-7">
@@ -256,7 +260,7 @@
               <p class="mt-2 text-sm text-gunmetal">Respect for time and attention is non-negotiable.</p>
             </div>
           </div>
-          <a href="#speaker-intake" class="fly-in motion-safe:transition mt-10 inline-flex items-center gap-2 rounded-full border border-gunmetal/25 bg-white/80 px-8 py-4 font-heading text-[11px] font-semibold uppercase tracking-[0.2em] text-carbon shadow-sm backdrop-blur-sm hover:border-green hover:text-green">
+          <a href="#speaker-intake" class="btn btn-outline motion-safe:transition fly-in mt-10">
             <i data-feather="send" class="h-4 w-4"></i>
             Submit speaker application
           </a>

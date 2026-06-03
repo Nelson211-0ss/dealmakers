@@ -62,7 +62,7 @@ const desktopNav = `      <nav class="hidden items-center gap-1 xl:gap-1.5 2xl:g
             </div>
           </div>
         </div>
-        <a class="motion-safe:transition shrink-0 rounded-full bg-bronze px-5 py-2.5 font-heading text-[12px] font-semibold uppercase tracking-[0.05em] text-carbon shadow-md shadow-bronze/20 hover:bg-bronze/90 xl:px-6" href="#" data-book-call>Book a Call</a>
+        <a class="btn btn-sm btn-bronze motion-safe:transition shrink-0" href="#" data-book-call>Book a Call</a>
       </nav>`;
 
 const mobileNav = `    <div id="mobile-nav" class="hidden border-t border-bone/15 bg-green px-5 py-4 lg:hidden">
@@ -112,7 +112,7 @@ const mobileNav = `    <div id="mobile-nav" class="hidden border-t border-bone/1
           <i data-feather="layers" class="h-5 w-5 shrink-0 text-bronze"></i>
           The room
         </a>
-        <a class="mt-3 block rounded-full bg-bronze px-6 py-3.5 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.05em] text-carbon shadow-lg shadow-bronze/25" href="#" data-book-call>Book a Call</a>
+        <a class="btn btn-bronze btn-block motion-safe:transition mt-3 shadow-lg shadow-bronze/25" href="#" data-book-call>Book a Call</a>
         <a href="access.html#request-access" class="mt-2 block text-center text-[13px] font-semibold text-bone/70 hover:text-bone motion-safe:transition">Request access</a>
       </div>
     </div>`;
