@@ -2,11 +2,9 @@
   "name": "dealmakers",
   "private": true,
   "scripts": {
-    "build": "npm run vercel-build",
-    "vercel-build": "npm run build:css && sh scripts/vercel-build.sh",
+    "build": "npm run build:css",
     "build:css": "tailwindcss -i ./src/tailwind.input.css -o ./css/site.css --minify",
     "dev": "node scripts/dev-server.js",
-    "start": "node server.js",
     "optimize:images": "sh scripts/optimize-images.sh",
     "package:godaddy": "sh scripts/package-godaddy.sh"
   },

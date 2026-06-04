@@ -17,6 +17,7 @@ const pages = [
   'how-it-works',
   'the-room',
   'launch-a-city',
+  'about',
 ];
 
 function patchContent(text) {
@@ -55,7 +56,11 @@ let nav = fs.readFileSync(navPath, 'utf8');
 const navOld = nav;
 nav = nav.replace(
   /if \(!path \|\| path\.toLowerCase\(\) === 'index\.html'\) return 'index';/,
-  "if (!path || path.toLowerCase() === 'index' || path.toLowerCase() === 'index.html') return 'index';"
+  "if (!path || path === '/' || path.toLowerCase() === 'index' || path.toLowerCase() === 'index.html') return 'index';"
+);
+nav = nav.replace(
+  /var m = path\.match\(\/\^\(\.\+\)\\.html\$\/i\);/,
+  "var m = path.match(/^(.+)\\.html$/i);"
 );
 if (nav !== navOld) {
   fs.writeFileSync(navPath, nav);

@@ -1,5 +1,5 @@
 /**
- * Local dev server with extensionless URLs: /events → events.html
+ * Local preview with clean URLs (matches GoDaddy .htaccess).
  * Run: npm run dev  (default http://127.0.0.1:5501)
  */
 const express = require('express');
@@ -8,14 +8,14 @@ const fs = require('fs');
 
 var root = path.join(__dirname, '..');
 var port = Number(process.env.PORT) || 5501;
-// Bind all interfaces in production (Hostinger sets PORT); localhost for local dev.
 var host = process.env.HOST || (process.env.PORT ? '0.0.0.0' : '127.0.0.1');
 
 var app = express();
 
 app.use(function (req, res, next) {
-  if (/\.html$/i.test(req.path) && req.path !== '/') {
+  if (/\.html$/i.test(req.path)) {
     var clean = req.path.replace(/\.html$/i, '') || '/';
+    if (clean === '/index') clean = '/';
     return res.redirect(301, clean);
   }
   next();
@@ -51,5 +51,5 @@ app.get('*', function (req, res, next) {
 
 app.listen(port, host, function () {
   console.log('Dealmakers → http://' + host + ':' + port + '/');
-  console.log('Clean URLs enabled (e.g. /events, not /events.html)');
+  console.log('Clean URLs (e.g. /membership, not /membership.html)');
 });

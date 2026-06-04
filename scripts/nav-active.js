@@ -2,7 +2,9 @@
   function currentStem() {
     var path = (window.location.pathname || '').split('/').pop() || '';
     path = path.split('?')[0].split('#')[0];
-    if (!path || path.toLowerCase() === 'index.html') return 'index';
+    if (!path || path === '/' || path.toLowerCase() === 'index' || path.toLowerCase() === 'index.html') {
+      return 'index';
+    }
     var m = path.match(/^(.+)\.html$/i);
     return m ? m[1].toLowerCase() : path.toLowerCase();
   }
