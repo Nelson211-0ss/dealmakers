@@ -27,8 +27,15 @@ node scripts/patch-clean-urls.js
 
 ## Local preview
 
+**Recommended** — clean URLs (same as production):
+
 ```bash
+npm install
 npm run dev
 ```
 
 Open `http://127.0.0.1:5501/membership`
+
+**VS Code “Go Live”** — uses port **5500** with route mounts in `.vscode/settings.json`. After changing settings, stop and restart Live Server, then open `http://127.0.0.1:5500/membership`.
+
+If you see `Cannot GET /membership`, you are on a static server without URL rewriting. Use `npm run dev` on port **5501**, or Go Live on port **5500** (not 5501).

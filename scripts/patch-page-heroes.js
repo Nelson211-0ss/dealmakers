@@ -10,7 +10,7 @@ const root = path.join(__dirname, '..');
 const carbonHeroOld =
   `  <section class="relative overflow-hidden bg-carbon text-bone noise-carbon">
     <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_20%_0%,rgba(197,163,125,0.14),transparent)]" aria-hidden="true"></div>
-    <div class="relative z-10 mx-auto max-w-7xl px-5 pb-16 pt-28 md:px-8 md:pb-20 md:pt-32">`;
+    <div class="page-hero__content">`;
 
 function carbonHero(img, objectPos = 'object-center') {
   return `  <section class="page-hero">
@@ -19,7 +19,7 @@ function carbonHero(img, objectPos = 'object-center') {
       <div class="page-hero__scrim"></div>
       <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_20%_0%,rgba(197,163,125,0.14),transparent)]"></div>
     </div>
-    <div class="relative z-10 mx-auto max-w-7xl px-5 pb-16 pt-28 md:px-8 md:pb-20 md:pt-32">`;
+    <div class="page-hero__content">`;
 }
 
 const pages = {
@@ -81,7 +81,7 @@ Object.entries(pages).forEach(([file, cfg]) => {
       <div class="page-hero__scrim"></div>
       <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_20%_0%,rgba(197,163,125,0.14),transparent)]"></div>
     </div>
-    <div class="relative z-10 mx-auto max-w-7xl px-5 pb-16 pt-28 md:px-8 md:pb-20 md:pt-32">`;
+    <div class="page-hero__content">`;
   html = html.replace(carbonHeroOld, replacement);
   fs.writeFileSync(fp, html);
   console.log('Patched hero:', file);

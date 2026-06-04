@@ -17,7 +17,7 @@ cp .htaccess "$STAGE/"
 cp css/site.css "$STAGE/css/"
 cp -R images/. "$STAGE/images/"
 
-for js in site-config.js social-links.js book-call.js nav-active.js email-float.js zoho-form-embed.js; do
+for js in site-config.js social-links.js book-call.js membership-checkout.js nav-active.js email-float.js zoho-form-embed.js; do
   cp "scripts/$js" "$STAGE/scripts/" 2>/dev/null || true
 done
 

@@ -1,3 +1,17 @@
 {
-    "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.mount": [
+    ["/ ", "./index.html"],
+    ["/about", "./about.html"],
+    ["/access", "./access.html"],
+    ["/apply", "./apply.html"],
+    ["/contact", "./contact.html"],
+    ["/events", "./events.html"],
+    ["/framework", "./framework.html"],
+    ["/how-it-works", "./how-it-works.html"],
+    ["/launch-a-city", "./launch-a-city.html"],
+    ["/membership", "./membership.html"],
+    ["/sponsorship", "./sponsorship.html"],
+    ["/the-room", "./the-room.html"]
+  ]
 }

@@ -253,6 +253,25 @@
     @apply relative overflow-hidden bg-carbon text-bone;
   }
 
+  .page-hero__content {
+    @apply relative z-10 mx-auto max-w-7xl px-5 pb-10 pt-24 md:px-8 md:pb-12 md:pt-28;
+  }
+
+  .page-hero__content > nav + * {
+    @apply !mt-5;
+  }
+
+  .page-hero__content .btn-row,
+  .page-hero__content > .fly-in.mt-10,
+  .page-hero__content > .flex.mt-10 {
+    @apply !mt-7;
+  }
+
+  .page-hero__content h1 + p,
+  .page-hero__content .fly-in.mt-6 {
+    @apply !mt-4;
+  }
+
   .page-hero--light {
     @apply bg-bone text-carbon;
   }

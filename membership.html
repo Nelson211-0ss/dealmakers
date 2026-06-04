@@ -215,7 +215,7 @@
       <div class="page-hero__scrim"></div>
       <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_20%_0%,rgba(197,163,125,0.14),transparent)]"></div>
     </div>
-    <div class="relative z-10 mx-auto max-w-7xl px-5 pb-16 pt-28 md:px-8 md:pb-20 md:pt-32">
+    <div class="page-hero__content">
       <nav class="text-[11px] font-medium uppercase tracking-[0.22em] text-bone/45" aria-label="Breadcrumb">
         <a href="/#hero" class="hover:text-bronze motion-safe:transition">Home</a>
         <span class="mx-2 text-bone/30">/</span>
@@ -225,8 +225,9 @@
       <h1 class="fly-in fly-stagger-1 mt-4 max-w-3xl font-heading text-3xl font-semibold leading-tight tracking-tight md:text-[2.65rem]">Belong to the ecosystem</h1>
       <p class="fly-in fly-stagger-2 mt-6 max-w-2xl text-base leading-relaxed text-bone/70 md:text-lg">Dealmakers is a high-frequency ecosystem for founders, operators, investors, and ambitious professionals shaping the future — built on relationships, not transactions.</p>
       <div class="fly-in fly-stagger-3 mt-10 btn-row">
+        <a href="#" data-membership-checkout class="btn btn-green motion-safe:transition shadow-lg shadow-green/25">Join Now</a>
         <a href="#" data-book-call class="btn btn-bronze motion-safe:transition shadow-lg shadow-bronze/25">Book a Call with Dani</a>
-        <a href="#membership-inquiry" class="btn btn-green motion-safe:transition shadow-lg shadow-green/25">Submit inquiry</a>
+        <a href="#membership-inquiry" class="btn btn-outline-dark motion-safe:transition">Submit inquiry</a>
         <a href="#founding-membership" class="btn btn-outline-dark motion-safe:transition">Founding circle</a>
       </div>
     </div>
@@ -248,22 +249,24 @@
             <p class="section-kicker text-green">Annual membership</p>
             <p class="mt-3 font-heading text-4xl font-semibold tracking-tight text-green md:text-[2.75rem]">$500 <span class="text-lg font-medium text-gunmetal">/ year</span></p>
             <p class="mt-3 text-sm leading-relaxed text-gunmetal">Full member access to the Dealmakers rhythm — flagship events, member-only experiences, and curated community touchpoints.</p>
+            <a href="#" data-membership-checkout class="btn btn-green motion-safe:transition mt-6 shadow-lg shadow-green/25">Join Now</a>
           </div>
 
           <div class="fly-in fly-stagger-2">
             <h3 class="section-kicker text-bronze">What&apos;s included</h3>
-            <ul class="mt-4 grid gap-2.5 sm:grid-cols-2">
-              <li class="flex gap-3 rounded-xl bg-white/80 px-4 py-4 ring-1 ring-gunmetal/10"><i data-feather="calendar" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span class="text-sm text-gunmetal"><span class="font-medium text-carbon">Quarterly marquee events</span> — flagship rhythm in the CEO format</span></li>
-              <li class="flex gap-3 rounded-xl bg-white/80 px-4 py-4 ring-1 ring-gunmetal/10"><i data-feather="lock" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span class="text-sm text-gunmetal"><span class="font-medium text-carbon">Member-only experiences</span> reserved for recurring participants</span></li>
-              <li class="flex gap-3 rounded-xl bg-white/80 px-4 py-4 ring-1 ring-gunmetal/10"><i data-feather="sunrise" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span class="text-sm text-gunmetal"><span class="font-medium text-carbon">Come early / stay late access</span> — the conversations that matter</span></li>
-              <li class="flex gap-3 rounded-xl bg-white/80 px-4 py-4 ring-1 ring-gunmetal/10"><i data-feather="users" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span class="text-sm text-gunmetal"><span class="font-medium text-carbon">Curated introductions</span> when fit is clear</span></li>
-              <li class="flex gap-3 rounded-xl bg-white/80 px-4 py-4 ring-1 ring-gunmetal/10"><i data-feather="coffee" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span class="text-sm text-gunmetal"><span class="font-medium text-carbon">Founder dinners &amp; socials</span> — depth beyond the stage</span></li>
-              <li class="flex gap-3 rounded-xl bg-white/80 px-4 py-4 ring-1 ring-gunmetal/10"><i data-feather="heart" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span class="text-sm text-gunmetal"><span class="font-medium text-carbon">Wellness gatherings &amp; recreation</span> — community off the clock</span></li>
-              <li class="flex gap-3 rounded-xl bg-white/80 px-4 py-4 ring-1 ring-gunmetal/10 sm:col-span-2"><i data-feather="zap" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span class="text-sm text-gunmetal"><span class="font-medium text-carbon">Priority access opportunities</span> when capacity is limited</span></li>
+            <ul class="mt-4 grid gap-3 sm:grid-cols-2 sm:gap-x-10">
+              <li class="flex gap-3 text-sm text-gunmetal"><i data-feather="calendar" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span><span class="font-medium text-carbon">Quarterly marquee events</span> — flagship rhythm in the CEO format</span></li>
+              <li class="flex gap-3 text-sm text-gunmetal"><i data-feather="lock" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span><span class="font-medium text-carbon">Member-only experiences</span> reserved for recurring participants</span></li>
+              <li class="flex gap-3 text-sm text-gunmetal"><i data-feather="sunrise" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span><span class="font-medium text-carbon">Come early / stay late access</span> — the conversations that matter</span></li>
+              <li class="flex gap-3 text-sm text-gunmetal"><i data-feather="users" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span><span class="font-medium text-carbon">Curated introductions</span> when fit is clear</span></li>
+              <li class="flex gap-3 text-sm text-gunmetal"><i data-feather="coffee" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span><span class="font-medium text-carbon">Founder dinners &amp; socials</span> — depth beyond the stage</span></li>
+              <li class="flex gap-3 text-sm text-gunmetal"><i data-feather="heart" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span><span class="font-medium text-carbon">Wellness gatherings &amp; recreation</span> — community off the clock</span></li>
+              <li class="flex gap-3 text-sm text-gunmetal sm:col-span-2"><i data-feather="zap" class="mt-0.5 h-5 w-5 shrink-0 text-bronze" aria-hidden="true"></i><span><span class="font-medium text-carbon">Priority access opportunities</span> when capacity is limited</span></li>
             </ul>
           </div>
 
           <div class="fly-in fly-stagger-3 btn-row">
+            <a href="#" data-membership-checkout class="btn btn-green motion-safe:transition shadow-lg shadow-green/25">Join Now</a>
             <a href="#" data-book-call class="btn btn-bronze motion-safe:transition shadow-lg">Book a Call with Dani</a>
             <a href="#membership-inquiry" class="btn btn-outline motion-safe:transition">Membership inquiry</a>
           </div>
@@ -556,6 +559,7 @@
   <script src="scripts/site-config.js" defer></script>
   <script src="scripts/social-links.js" defer></script>
   <script src="scripts/book-call.js" defer></script>
+  <script src="scripts/membership-checkout.js" defer></script>
   <script src="scripts/zoho-form-embed.js" defer></script>
   <script src="scripts/nav-active.js" defer></script>
   <script src="scripts/email-float.js" defer></script>
