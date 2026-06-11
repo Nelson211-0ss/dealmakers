@@ -19,6 +19,7 @@ See [DEPLOY-GODADDY.md](./DEPLOY-GODADDY.md) for Go Live / Live Server options.
 
 ```bash
 npm install
+npm run optimize:images   # after adding or replacing photos
 npm run package:godaddy
 ```
 
@@ -31,6 +32,8 @@ This creates a fresh `dealmakers-deploy.zip` with:
 - `.htaccess` (clean URL redirects)
 
 Upload the zip to GoDaddy `public_html` → **Extract** (overwrite `.htaccess`).
+
+**Zip size:** expect about **10–12MB**. If the zip is **50MB+**, run `npm run optimize:images` before packaging — unoptimized photos are usually the cause. See [DEPLOY-GODADDY.md](./DEPLOY-GODADDY.md#images-and-zip-size).
 
 ### After upload, verify
 
@@ -47,6 +50,7 @@ More detail: [DEPLOY-GODADDY.md](./DEPLOY-GODADDY.md)
 |---------|---------|
 | `npm run dev` | Local server with clean URLs (port 5501) |
 | `npm run build` | Rebuild CSS |
+| `npm run optimize:images` | Compress photos and remove unused images before deploy |
 | `npm run package:godaddy` | Build CSS and create deploy zip |
 
 ## Site config

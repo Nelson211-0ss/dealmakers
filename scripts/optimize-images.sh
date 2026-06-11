@@ -32,7 +32,13 @@ optimize_png() {
 echo "Removing unused full-resolution photos (not linked from any page)..."
 for unused in \
   Pics-073.jpg Pics-078.jpg Pics-098.jpg Pics-099.jpg \
-  "DM BLACK TRANSPARENT.png"
+  "DM BLACK TRANSPARENT.png" \
+  DealMakersJuneMembersEvent_0003.jpg \
+  "DealMakersJuneMembersEvent_0044 (1).jpg" \
+  DealMakersJuneMembersEvent_0044.jpg \
+  DealMakersJuneMembersEvent_0073.jpg \
+  DealMakersJuneMembersEvent_0089.jpg \
+  DealMakersJuneMembersEvent_0100.jpg
 do
   if [ -f "$IMG/$unused" ]; then
     rm -f "$IMG/$unused"
@@ -43,7 +49,10 @@ done
 echo "Compressing event photos (max 1920px, JPEG quality 80)..."
 for photo in \
   Dealmakers_0040.jpg Dealmakers_0057.jpg Dealmakers_0124.jpg Dealmakers_0125.jpg \
-  DealmakersNovember_0003.jpg
+  DealmakersNovember_0003.jpg \
+  DealMakersJuneMembersEvent_0027.jpg \
+  DealMakersJuneMembersEvent_0034.jpg \
+  DealMakersJuneMembersEvent_0098.jpg
 do
   if [ -f "$IMG/$photo" ]; then
     before=$(stat -f%z "$IMG/$photo" 2>/dev/null || stat -c%s "$IMG/$photo")
