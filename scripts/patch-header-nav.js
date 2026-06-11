@@ -19,7 +19,7 @@ const desktopNav = `      <nav class="hidden items-center gap-1 xl:gap-1.5 2xl:g
         </a>
         <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-base" href="sponsorship.htm" data-active-when="sponsorship">
           <i data-feather="award" class="h-[18px] w-[18px] shrink-0 text-bronze xl:h-5 xl:w-5"></i>
-          Sponsorship
+          Partnership
         </a>
         <a class="motion-safe:transition inline-flex items-center gap-1.5 rounded-lg px-1 py-1.5 text-[15px] font-semibold tracking-tight text-bone/80 hover:bg-bone/10 hover:text-bone xl:text-base" href="events.htm" data-active-when="events">
           <i data-feather="calendar" class="h-[18px] w-[18px] shrink-0 text-bronze xl:h-5 xl:w-5"></i>
@@ -77,7 +77,7 @@ const mobileNav = `    <div id="mobile-nav" class="hidden border-t border-bone/1
         </a>
         <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="sponsorship.htm" data-active-when="sponsorship">
           <i data-feather="award" class="h-6 w-6 shrink-0 text-bronze"></i>
-          Sponsorship
+          Partnership
         </a>
         <a class="motion-safe:transition inline-flex items-center gap-2.5 py-2.5 text-[17px] font-semibold tracking-tight text-bone/80 hover:text-bone" href="events.htm" data-active-when="events">
           <i data-feather="calendar" class="h-6 w-6 shrink-0 text-bronze"></i>
