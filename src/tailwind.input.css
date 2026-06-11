@@ -66,7 +66,18 @@
   }
 
   .dm-card {
-    @apply flex flex-col overflow-hidden rounded-2xl p-5 shadow-md ring-1 motion-safe:transition md:p-6;
+    @apply flex flex-col overflow-hidden rounded-2xl p-5 shadow-md ring-1 md:p-6;
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.3s ease,
+      background-color 0.3s ease,
+      ring-color 0.3s ease;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .dm-card:hover {
+      transform: translateY(-0.3rem);
+    }
   }
 
   .dm-card-head {
@@ -75,26 +86,53 @@
 
   .dm-card-icon {
     @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ring-1;
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.3s ease,
+      color 0.3s ease,
+      ring-color 0.3s ease;
   }
 
   .dm-card-title {
-    @apply font-heading text-lg font-semibold leading-tight;
+    @apply font-heading text-lg font-semibold leading-tight motion-safe:transition;
   }
 
   .dm-card-body {
-    @apply mt-3 flex-1 text-sm leading-relaxed;
+    @apply mt-3 flex-1 text-sm leading-relaxed motion-safe:transition;
   }
 
   .dm-card--green {
-    @apply bg-green text-bone shadow-green/25 ring-bone/20 hover:ring-bronze/45;
+    @apply bg-green text-bone shadow-green/25 ring-bone/20;
+  }
+
+  .dm-card--green:hover {
+    @apply bg-carbon shadow-xl shadow-carbon/30 ring-bronze/50;
   }
 
   .dm-card--green .dm-card-icon {
     @apply bg-bone/15 text-bronze ring-bone/10;
   }
 
+  .dm-card--green:hover .dm-card-icon {
+    @apply bg-bronze text-carbon ring-bronze/40;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .dm-card--green:hover .dm-card-icon {
+      transform: scale(1.08);
+    }
+  }
+
   .dm-card--green .dm-card-body {
     @apply text-bone/75;
+  }
+
+  .dm-card--green:hover .dm-card-body {
+    @apply text-bone/90;
+  }
+
+  .dm-card--green:hover .dm-card-title {
+    @apply text-bronze;
   }
 
   .dm-card--carbon {
