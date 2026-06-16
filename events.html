@@ -82,6 +82,39 @@
         transition: none;
       }
     }
+    .past-events-table {
+      border-collapse: separate;
+      border-spacing: 0 0.5rem;
+    }
+    .past-events-table thead th {
+      background-color: #0F1115;
+      color: #F4F3EF;
+    }
+    .past-events-table thead th:first-child {
+      border-radius: 0.75rem 0 0 0.75rem;
+    }
+    .past-events-table thead th:last-child {
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .past-events-table tbody tr {
+      background-color: #ffffff;
+      box-shadow: 0 1px 2px rgba(15, 17, 21, 0.05);
+    }
+    .past-events-table tbody tr:nth-child(even) {
+      background-color: rgba(58, 63, 69, 0.06);
+    }
+    .past-events-table tbody td {
+      border-top: 1px solid rgba(58, 63, 69, 0.12);
+      border-bottom: 1px solid rgba(58, 63, 69, 0.12);
+    }
+    .past-events-table tbody td:first-child {
+      border-left: 1px solid rgba(58, 63, 69, 0.12);
+      border-radius: 0.75rem 0 0 0.75rem;
+    }
+    .past-events-table tbody td:last-child {
+      border-right: 1px solid rgba(58, 63, 69, 0.12);
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
   </style>
 </head>
 <body class="bg-bone font-sans text-carbon antialiased selection:bg-bronze/25 selection:text-carbon">
@@ -231,12 +264,12 @@
     </div>
   </section>
 
-  <section id="events" class="bg-bone py-14 md:py-20">
+  <section id="upcoming-events" class="bg-bone py-14 md:py-20">
     <div class="mx-auto max-w-7xl px-5 md:px-8">
       <div class="flex flex-col justify-between gap-8 md:flex-row md:items-end">
         <div class="fly-in">
-          <h2 class="section-title">Momentum lives here.</h2>
-          <p class="mt-4 max-w-xl text-gunmetal">Flagship working rooms in the CEO format — Community, Expertise, and Opportunities in one rhythm.</p>
+          <p class="section-kicker text-green">Upcoming events</p>
+          <p class="mt-4 max-w-xl text-gunmetal">Flagship working rooms — Community, Expertise, and Opportunities in one rhythm.</p>
         </div>
         <a href="/membership#membership-inquiry" class="btn btn-outline motion-safe:transition fly-in fly-from-right shrink-0">
           <i data-feather="key" class="h-4 w-4"></i>
@@ -254,23 +287,21 @@
         </div>
       </div>
 
-      <div class="mt-14 grid gap-5 md:grid-cols-3">
+      <p class="fly-in mt-14 section-kicker text-gunmetal">CEO format</p>
+      <div class="mt-5 grid gap-5 md:grid-cols-3">
         <div class="fly-in fly-stagger-1 rounded-3xl bg-white/70 p-8 shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm md:p-10">
           <div class="mb-4 text-bronze"><i data-feather="users" class="h-6 w-6"></i></div>
-          <p class="section-kicker text-gunmetal">CEO format</p>
-          <h3 class="mt-3 font-heading text-lg font-semibold text-carbon">Community</h3>
+          <h3 class="font-heading text-lg font-semibold text-carbon">Community</h3>
           <p class="mt-2 text-sm leading-relaxed text-gunmetal">A room where familiar faces compound trust and contribution is the default.</p>
         </div>
         <div class="fly-in fly-stagger-2 rounded-3xl bg-white/70 p-8 shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm md:p-10">
           <div class="mb-4 text-bronze"><i data-feather="award" class="h-6 w-6"></i></div>
-          <p class="section-kicker text-gunmetal">CEO format</p>
-          <h3 class="mt-3 font-heading text-lg font-semibold text-carbon">Expertise</h3>
+          <h3 class="font-heading text-lg font-semibold text-carbon">Expertise</h3>
           <p class="mt-2 text-sm leading-relaxed text-gunmetal">Insight shown through judgment and execution — not performance or pitch theater.</p>
         </div>
         <div class="fly-in fly-stagger-3 rounded-3xl bg-white/70 p-8 shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm md:p-10">
           <div class="mb-4 text-bronze"><i data-feather="zap" class="h-6 w-6"></i></div>
-          <p class="section-kicker text-gunmetal">CEO format</p>
-          <h3 class="mt-3 font-heading text-lg font-semibold text-carbon">Opportunities</h3>
+          <h3 class="font-heading text-lg font-semibold text-carbon">Opportunities</h3>
           <p class="mt-2 text-sm leading-relaxed text-gunmetal">Real deals, real capital in motion — decision energy from first conversation to follow-through.</p>
         </div>
       </div>
@@ -288,10 +319,10 @@
             <div class="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-carbon/30 lg:to-carbon" aria-hidden="true"></div>
           </div>
           <div class="relative z-10 flex flex-col justify-center p-8 md:p-12">
-            <p class="text-[11px] font-semibold uppercase tracking-[0.25em] text-bronze">Upcoming</p>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.25em] text-bronze">Next session</p>
             <h3 class="mt-4 font-heading text-2xl font-semibold">Dealmakers CEO — Austin (Spring)</h3>
             <div class="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm text-bone/65">
-              <span class="inline-flex items-center gap-2"><i data-feather="calendar" class="h-4 w-4 text-bronze"></i> Flagship · CEO format</span>
+              <span class="inline-flex items-center gap-2"><i data-feather="calendar" class="h-4 w-4 text-bronze"></i> Flagship session</span>
               <span class="inline-flex items-center gap-2"><i data-feather="map-pin" class="h-4 w-4 text-bronze"></i> East End Ballroom</span>
               <span class="inline-flex items-center gap-2"><i data-feather="clock" class="h-4 w-4 text-bronze"></i> Half-day</span>
             </div>
@@ -303,77 +334,96 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h3 class="fly-in mt-16 section-kicker text-gunmetal">Past events</h3>
-      <div class="mt-6 space-y-1">
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2025-02-12</span>
-          <span class="font-medium text-carbon">CEO — Capital in Motion</span>
-          <span class="text-gunmetal">East End Ballroom</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2024-11-07</span>
-          <span class="font-medium text-carbon">CEO — Execution &amp; Leverage</span>
-          <span class="text-gunmetal">Hotel Magdalena</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2024-09-18</span>
-          <span class="font-medium text-carbon">CEO — Credit &amp; Structure</span>
-          <span class="text-gunmetal">The Contemporary Austin</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2024-06-05</span>
-          <span class="font-medium text-carbon">CEO — Growth Platforms</span>
-          <span class="text-gunmetal">Springdale General</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2024-03-21</span>
-          <span class="font-medium text-carbon">CEO — Discipline &amp; Edge</span>
-          <span class="text-gunmetal">Lucky Arrow Retreat</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2023-12-06</span>
-          <span class="font-medium text-carbon">CEO — Year-End Room</span>
-          <span class="text-gunmetal">South Congress Hotel</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2023-09-14</span>
-          <span class="font-medium text-carbon">CEO — Operator Roundtable</span>
-          <span class="text-gunmetal">Umlauf Sculpture Garden</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2023-06-01</span>
-          <span class="font-medium text-carbon">CEO — Austin Assembly</span>
-          <span class="text-gunmetal">East End Ballroom</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2023-02-08</span>
-          <span class="font-medium text-carbon">CEO — Winter Working Room</span>
-          <span class="text-gunmetal">South Congress Hotel</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2022-10-19</span>
-          <span class="font-medium text-carbon">CEO — Risk &amp; Judgment</span>
-          <span class="text-gunmetal">Hotel Magdalena</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2022-07-27</span>
-          <span class="font-medium text-carbon">CEO — Mid-Year Working Room</span>
-          <span class="text-gunmetal">Lucky Arrow Retreat</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2022-04-12</span>
-          <span class="font-medium text-carbon">CEO — Capital Stack</span>
-          <span class="text-gunmetal">Springdale General</span>
-        </div>
-        <div class="grid gap-2 rounded-2xl bg-gunmetal/[0.05] px-4 py-4 text-sm sm:grid-cols-[7rem_1fr_1fr] sm:items-baseline sm:gap-6">
-          <span class="font-mono text-xs text-gunmetal">2021-11-17</span>
-          <span class="font-medium text-carbon">CEO — Founding Room</span>
-          <span class="text-gunmetal">East End Ballroom</span>
-        </div>
+  <section id="past-events" class="border-t border-gunmetal/10 bg-bone py-14 md:py-20">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <p class="fly-in section-kicker text-gunmetal">Past events</p>
+      <div class="fly-in mt-6 overflow-x-auto">
+        <table class="past-events-table w-full min-w-[32rem] text-left text-sm">
+          <thead>
+            <tr>
+              <th scope="col" class="px-4 py-3.5 font-heading text-[11px] font-semibold uppercase tracking-[0.16em] md:px-6">Date</th>
+              <th scope="col" class="px-4 py-3.5 font-heading text-[11px] font-semibold uppercase tracking-[0.16em] md:px-6">Theme</th>
+              <th scope="col" class="px-4 py-3.5 font-heading text-[11px] font-semibold uppercase tracking-[0.16em] md:px-6">Venue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2025-02-12</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Capital in Motion</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">East End Ballroom</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2024-11-07</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Execution &amp; Leverage</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">Hotel Magdalena</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2024-09-18</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Credit &amp; Structure</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">The Contemporary Austin</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2024-06-05</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Growth Platforms</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">Springdale General</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2024-03-21</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Discipline &amp; Edge</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">Lucky Arrow Retreat</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2023-12-06</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Year-End Room</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">South Congress Hotel</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2023-09-14</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Operator Roundtable</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">Umlauf Sculpture Garden</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2023-06-01</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Austin Assembly</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">East End Ballroom</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2023-02-08</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Winter Working Room</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">South Congress Hotel</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2022-10-19</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Risk &amp; Judgment</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">Hotel Magdalena</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2022-07-27</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Mid-Year Working Room</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">Lucky Arrow Retreat</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2022-04-12</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Capital Stack</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">Springdale General</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-4 py-4 font-mono text-xs text-gunmetal md:px-6 md:py-5">2021-11-17</td>
+              <td class="px-4 py-4 font-medium text-carbon md:px-6 md:py-5">Founding Room</td>
+              <td class="px-4 py-4 text-gunmetal md:px-6 md:py-5">East End Ballroom</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+    </div>
+  </section>
 
-      <div class="fly-in mt-16 grid gap-5 md:grid-cols-2">
+  <section id="events" class="border-t border-gunmetal/10 bg-bone py-14 md:py-20">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <div class="fly-in grid gap-5 md:grid-cols-2">
         <div class="group overflow-hidden rounded-3xl bg-white/70 shadow-sm ring-1 ring-gunmetal/10 backdrop-blur-sm">
           <div class="img-frame-fill img-frame--16-9"><img src="images/Dealmakers_0057.jpg" alt="Speaker leading an immersion session" class="object-[center_35%] motion-safe:transition motion-safe:duration-500 group-hover:scale-105" width="1920" height="1280" loading="lazy" />
           </div>

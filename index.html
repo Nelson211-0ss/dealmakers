@@ -53,6 +53,58 @@
       0%, 100% { transform: scale(1); opacity: 0.88; }
       50% { transform: scale(1.06); opacity: 1; }
     }
+    .sponsor-logo-tile {
+      display: inline-flex;
+      height: 4.625rem;
+      min-width: 7rem;
+      max-width: 12rem;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      border-width: 1px;
+      border-style: solid;
+      padding: 0.625rem 1rem;
+      box-shadow: 0 4px 6px -1px rgba(15, 17, 21, 0.08);
+    }
+    @media (min-width: 768px) {
+      .sponsor-logo-tile {
+        height: 5.375rem;
+        max-width: 13rem;
+        border-radius: 1rem;
+        padding: 0.75rem 1.25rem;
+      }
+    }
+    .sponsor-logo-tile--dark {
+      background-color: #0F1115;
+      border-color: rgba(244, 243, 239, 0.12);
+    }
+    .sponsor-logo-tile--dark img {
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+    }
+    .sponsor-logo-tile--light {
+      background-color: #ffffff;
+      border-color: rgba(58, 63, 69, 0.14);
+      box-shadow: 0 4px 14px rgba(15, 17, 21, 0.06);
+    }
+    .sponsor-logo-tile--light img {
+      filter: none;
+    }
+    .sponsor-logo-tile--bone {
+      background-color: #F4F3EF;
+      border-color: rgba(197, 163, 125, 0.28);
+      box-shadow: 0 4px 14px rgba(15, 17, 21, 0.05);
+    }
+    .sponsor-logo-tile--bone img {
+      filter: none;
+    }
+    .sponsor-logo-tile--green {
+      background-color: #1F3D2B;
+      border-color: rgba(197, 163, 125, 0.22);
+    }
+    .sponsor-logo-tile--green img {
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+    }
     .sponsor-logo-anim {
       animation: sponsor-logo-breathe 4.5s ease-in-out infinite;
     }
@@ -493,15 +545,15 @@
   </section>
 
   <!-- Sponsors -->
-  <section id="sponsors" class="relative overflow-hidden border-y border-gunmetal/10 bg-bone py-16 md:py-20" aria-label="Sponsors">
+  <section id="sponsors" class="relative overflow-hidden border-y border-gunmetal/10 bg-bone py-16 md:py-20" aria-label="Partnership">
     <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(31,61,43,0.06),transparent)]" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-7xl px-5 md:px-8">
       <div class="flex flex-col items-center text-center">
-        <p class="fly-in section-kicker text-bronze">Sponsors</p>
+        <p class="fly-in section-kicker text-bronze">Partnership</p>
         <h2 class="fly-in fly-stagger-1 mt-3 font-heading text-xl font-semibold text-carbon md:text-2xl">The operators who help underwrite the room</h2>
         <p class="fly-in fly-stagger-2 mt-5 max-w-2xl text-sm leading-relaxed text-gunmetal md:text-[15px]">From booths to moderated panels — partner where the room earns trust. Visibility compounds when sponsors return month after month.</p>
         <div class="fly-in fly-stagger-3 btn-row mt-7 justify-center">
-          <a href="/sponsorship" class="btn btn-green motion-safe:transition shadow-md shadow-green/20"><i data-feather="award" class="h-3.5 w-3.5"></i> Sponsorship overview</a>
+          <a href="/sponsorship" class="btn btn-green motion-safe:transition shadow-md shadow-green/20"><i data-feather="award" class="h-3.5 w-3.5"></i> Partnership overview</a>
           <a href="/events" class="btn btn-outline motion-safe:transition">Featured session</a>
         </div>
         <p id="sponsors-empty" class="fly-in fly-stagger-4 mt-10 hidden max-w-lg text-sm text-gunmetal">Add logos under <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsors</code> and list filenames in <code class="rounded bg-gunmetal/10 px-1.5 py-0.5 text-[13px] text-carbon">images/sponsors/manifest.json</code>.</p>
@@ -886,6 +938,13 @@
           if (empty) empty.classList.remove('hidden');
         }
 
+        function normalizeLogo(entry) {
+          if (typeof entry === 'string') {
+            return { src: entry, tile: 'dark' };
+          }
+          return { src: entry.src, tile: entry.tile || 'dark' };
+        }
+
         function showStrip(files) {
           if (!files || !files.length) {
             showEmpty();
@@ -894,15 +953,19 @@
           var base = 'images/sponsors/';
           var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           var html = files
-            .filter(function (name) {
-              return typeof name === 'string' && name.length > 0;
+            .map(normalizeLogo)
+            .filter(function (logo) {
+              return logo.src && logo.src.length > 0;
             })
-            .map(function (name, i) {
+            .map(function (logo, i) {
               var delay = ((i % 6) * 0.45).toFixed(2);
-              var src = base + name.split('/').map(encodeURIComponent).join('/');
+              var src = base + logo.src.split('/').map(encodeURIComponent).join('/');
               var animClass = reducedMotion ? '' : ' sponsor-logo-anim';
+              var tileClass = 'sponsor-logo-tile sponsor-logo-tile--' + logo.tile;
               return (
-                '<div class="inline-flex h-[4.625rem] min-w-[7rem] max-w-[12rem] shrink-0 items-center justify-center rounded-xl border border-gunmetal/15 bg-white/80 px-4 py-2.5 shadow-sm backdrop-blur-sm md:h-[5.375rem] md:max-w-[13rem] md:rounded-2xl md:px-5 md:py-3">' +
+                '<div class="' +
+                tileClass +
+                '">' +
                 '<img src="' +
                 src +
                 '" alt="" class="max-h-11 w-auto max-w-full object-contain md:max-h-[3.5rem]' +
