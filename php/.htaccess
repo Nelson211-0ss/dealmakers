@@ -1,0 +1,22 @@
+# Clean URLs for PHP on GoDaddy / Apache
+RewriteEngine On
+RewriteBase /
+
+# /index.php → /
+RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# /page.php → /page
+RewriteCond %{THE_REQUEST} \s/+(.+)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# /page → page.php (internal only)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/%1.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+# Home
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^$ index.php [L]

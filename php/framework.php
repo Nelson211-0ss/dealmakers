@@ -1,0 +1,647 @@
+<?php
+declare(strict_types=1);
+require_once __DIR__ . '/includes/bootstrap.php';
+
+$pageTitle = 'Framework | Dealmakers';
+$pageSlug = 'framework';
+$pageStyles = <<<'CSS'
+html {
+      scroll-padding-top: 100px;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+    .noise-carbon {
+      position: relative;
+    }
+    .noise-carbon::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.06;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .fw-scroll {
+      -webkit-overflow-scrolling: touch;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .fly-in {
+        opacity: 0;
+        transform: translateY(2.25rem);
+        transition:
+          opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: var(--fly-delay, 0s);
+      }
+      .fly-in.fly-from-left {
+        transform: translateX(-2rem);
+      }
+      .fly-in.fly-from-right {
+        transform: translateX(2rem);
+      }
+      .fly-in.is-visible {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+      .fly-in.fly-stagger-1 { --fly-delay: 0.06s; }
+      .fly-in.fly-stagger-2 { --fly-delay: 0.12s; }
+      .fly-in.fly-stagger-3 { --fly-delay: 0.18s; }
+      .fly-in.fly-stagger-4 { --fly-delay: 0.24s; }
+      .fly-in.fly-stagger-5 { --fly-delay: 0.3s; }
+      .fly-in.fly-stagger-6 { --fly-delay: 0.36s; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fly-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+CSS;
+$pageInlineScript = <<<'JS'
+(function () {
+      var toggle = document.getElementById('menu-toggle');
+      var mobileNav = document.getElementById('mobile-nav');
+      var mobileLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
+
+      function setOpen(open) {
+        if (!toggle || !mobileNav) return;
+        mobileNav.classList.toggle('hidden', !open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
+      if (toggle && mobileNav) {
+        toggle.addEventListener('click', function () {
+          setOpen(mobileNav.classList.contains('hidden'));
+        });
+        mobileLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            setOpen(false);
+          });
+        });
+      }
+
+      var y = document.getElementById('year');
+      if (y) y.textContent = String(new Date().getFullYear());
+
+      function initScrollFlyIn() {
+        var els = document.querySelectorAll('.fly-in');
+        if (!els.length) return;
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduced || !('IntersectionObserver' in window)) {
+          els.forEach(function (el) {
+            el.classList.add('is-visible');
+          });
+          return;
+        }
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            });
+          },
+          { rootMargin: '0px 0px -7% 0px', threshold: 0.07 }
+        );
+        els.forEach(function (el) {
+          io.observe(el);
+        });
+      }
+
+      initScrollFlyIn();
+
+      if (typeof feather !== 'undefined') feather.replace();
+    })();
+JS;
+require __DIR__ . '/includes/layout-start.php';
+?>
+<section class="page-hero page-hero--light">
+    <div class="page-hero__bg" aria-hidden="true">
+      <img src="images/Dealmakers_0040.jpg" alt="" class="object-[center_40%]" width="1920" height="1280" loading="eager" fetchpriority="high" />
+      <div class="page-hero__scrim"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_90%_-10%,rgba(197,163,125,0.14),transparent)]"></div>
+    </div>
+    <div class="page-hero__content relative z-10 mx-auto w-full max-w-7xl px-5 pb-10 pt-24 md:px-8 md:pb-12 md:pt-28">
+      <nav class="text-[11px] font-medium uppercase tracking-[0.22em] text-gunmetal/80" aria-label="Breadcrumb">
+        <a href="/#hero" class="hover:text-bronze motion-safe:transition">Home</a>
+        <span class="mx-2 text-gunmetal/40">/</span>
+        <span class="text-carbon">Framework</span>
+      </nav>
+      <p class="fly-in mt-8 section-kicker text-green">Membership · founding · sponsorship</p>
+      <h1 class="fly-in fly-stagger-1 mt-4 max-w-3xl font-heading text-3xl font-semibold leading-tight tracking-tight text-carbon md:text-[2.65rem]">How we structure the ecosystem.</h1>
+      <p class="fly-in fly-stagger-2 mt-6 max-w-2xl text-base leading-relaxed text-gunmetal md:text-lg">A shared map for how Dealmakers explains membership products, founding designations, company seats, sponsorship lanes, and annual visibility — keeping <em class="not-italic font-medium text-carbon">access</em>, <em class="not-italic font-medium text-carbon">status</em>, and <em class="not-italic font-medium text-carbon">advertising</em> cleanly separated.</p>
+      <div class="fly-in fly-stagger-3 mt-10 flex max-w-3xl flex-wrap gap-1.5">
+        <a href="#ecosystem" class="rounded-full border border-gunmetal/15 bg-white/80 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-carbon backdrop-blur-sm hover:border-green hover:text-green motion-safe:transition">Ecosystem</a>
+        <a href="#general-admission" class="rounded-full border border-gunmetal/15 bg-white/80 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-carbon backdrop-blur-sm hover:border-green hover:text-green motion-safe:transition">GA</a>
+        <a href="#individual-membership" class="rounded-full border border-gunmetal/15 bg-white/80 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-carbon backdrop-blur-sm hover:border-green hover:text-green motion-safe:transition">Member</a>
+        <a href="#company-membership" class="rounded-full border border-gunmetal/15 bg-white/80 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-carbon backdrop-blur-sm hover:border-green hover:text-green motion-safe:transition">Company</a>
+        <a href="#founding-membership" class="rounded-full border border-gunmetal/15 bg-white/80 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-carbon backdrop-blur-sm hover:border-green hover:text-green motion-safe:transition">Founding</a>
+        <a href="#event-sponsors" class="rounded-full border border-gunmetal/15 bg-white/80 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-carbon backdrop-blur-sm hover:border-green hover:text-green motion-safe:transition">Event sponsors</a>
+        <a href="#annual-corporate" class="rounded-full border border-gunmetal/15 bg-white/80 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-carbon backdrop-blur-sm hover:border-green hover:text-green motion-safe:transition">Annual</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="purpose" class="border-t border-gunmetal/10 bg-bone py-14 md:py-20">
+    <div class="mx-auto grid max-w-7xl gap-12 px-5 md:grid-cols-2 md:gap-16 md:px-8 lg:items-center">
+      <div class="fly-in min-w-0">
+        <p class="section-kicker text-green">Overview</p>
+        <h2 class="mt-3 section-title">Purpose of this framework</h2>
+        <p class="mt-4 text-sm leading-relaxed text-gunmetal md:text-base">This serves as our reference for structuring and explaining membership products, Founding Member designations, company memberships, and sponsorship offerings — aligning internal clarity, sales language, and operations so anyone on the team can explain <span class="font-medium text-carbon">what each tier is</span>, <span class="font-medium text-carbon">who it serves</span>, <span class="font-medium text-carbon">what it includes and excludes</span>, and how to communicate it outward.</p>
+        <p class="mt-4 text-sm text-gunmetal">Use the jump links in the hero to move between lanes — access, status, and advertising stay cleanly separated.</p>
+      </div>
+      <div class="fly-in fly-from-right">
+        <div class="img-frame-fill aspect-[4/3] min-h-[14rem] rounded-3xl shadow-2xl shadow-carbon/15 ring-1 ring-gunmetal/10 lg:aspect-[16/11] lg:min-h-[18rem]">
+          <img src="images/Dealmakers_0124.jpg" alt="Members in conversation at a Dealmakers session" class="object-center" width="1920" height="1280" loading="lazy" />
+        </div>
+        <p class="mt-3 text-center text-xs text-gunmetal/75">The ecosystem in one room — Austin &amp; Dallas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core ecosystem -->
+  <section id="ecosystem" class="relative border-t border-gunmetal/10 bg-carbon py-20 text-bone md:py-24 noise-carbon">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_10%_0%,rgba(197,163,125,0.12),transparent)]" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
+        <div class="min-w-0">
+          <p class="fly-in section-kicker text-bronze">Section 1</p>
+          <h2 class="fly-in fly-stagger-1 mt-3 font-heading text-2xl font-semibold md:text-4xl">Core logic of the ecosystem</h2>
+          <p class="fly-in fly-stagger-2 mt-4 max-w-2xl text-sm text-bone/70 md:text-base">Separate participation into clear categories — confusion between lanes erodes perceived value.</p>
+          <div class="fly-in fly-stagger-3 mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm fw-scroll overflow-x-auto">
+            <table class="min-w-[36rem] w-full text-left text-sm md:min-w-0">
+              <thead>
+                <tr class="border-b border-white/10 text-[11px] font-semibold uppercase tracking-wider text-bronze">
+                  <th class="whitespace-nowrap px-5 py-4 md:px-6">Category</th>
+                  <th class="whitespace-nowrap px-5 py-4 md:px-6">Meaning</th>
+                </tr>
+              </thead>
+              <tbody class="text-bone/85">
+                <tr class="border-b border-white/5"><td class="px-5 py-3.5 font-medium text-bone md:px-6">General Admission</td><td class="px-5 py-3.5 text-bone/75 md:px-6">Attend</td></tr>
+                <tr class="border-b border-white/5"><td class="px-5 py-3.5 font-medium text-bone md:px-6">Member</td><td class="px-5 py-3.5 text-bone/75 md:px-6">Belong</td></tr>
+                <tr class="border-b border-white/5"><td class="px-5 py-3.5 font-medium text-bone md:px-6">Company Member</td><td class="px-5 py-3.5 text-bone/75 md:px-6">Belong as a team</td></tr>
+                <tr class="border-b border-white/5"><td class="px-5 py-3.5 font-medium text-bone md:px-6">Founding Member</td><td class="px-5 py-3.5 text-bone/75 md:px-6">Help build</td></tr>
+                <tr class="border-b border-white/5"><td class="px-5 py-3.5 font-medium text-bone md:px-6">Sponsor</td><td class="px-5 py-3.5 text-bone/75 md:px-6">Be seen</td></tr>
+                <tr><td class="px-5 py-3.5 font-medium text-bone md:px-6">Annual Corporate Sponsor</td><td class="px-5 py-3.5 text-bone/75 md:px-6">Stay visible year-round</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="fly-in fly-from-right flex flex-col gap-4">
+          <div class="img-frame-fill aspect-[16/10] min-h-[12rem] rounded-3xl shadow-2xl shadow-carbon/40 ring-1 ring-white/10 lg:min-h-[16rem]">
+            <img src="images/Dealmakers_0040.jpg" alt="Full room at a flagship Dealmakers event" class="object-[center_40%]" width="1920" height="1280" loading="lazy" />
+          </div>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="img-frame img-frame--4-3 rounded-xl ring-white/10"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-4_websize.jpg" alt="Guests arriving at an event" class="object-center" width="1600" height="1067" loading="lazy" /></div>
+            <div class="img-frame img-frame--4-3 rounded-xl ring-white/10"><img src="images/Dealmakers_0124.jpg" alt="Members connecting between sessions" class="object-center" width="1920" height="1280" loading="lazy" /></div>
+            <div class="img-frame img-frame--4-3 rounded-xl ring-white/10"><img src="images/Dealmakers_0125.jpg" alt="Sponsor visibility in a full room" class="object-[center_45%]" width="1920" height="1280" loading="lazy" /></div>
+          </div>
+          <p class="text-center text-xs text-bone/50">Attend · belong · build · be seen — four distinct postures in the same room</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- General admission -->
+  <section id="general-admission" class="border-t border-gunmetal/10 bg-bone py-14 md:py-20">
+    <div class="mx-auto grid max-w-7xl gap-14 px-5 md:grid-cols-2 md:gap-16 md:px-8 lg:items-start">
+      <div class="fly-in min-w-0">
+        <p class="section-kicker text-green">Section 2</p>
+        <h2 class="mt-4 section-title">General admission</h2>
+        <p class="mt-4 text-gunmetal">The simplest entry to attend one flagship session without joining as a member. <span class="font-medium text-carbon">Transactional</span> entry — versus membership&apos;s relational role.</p>
+        <div class="mt-8 rounded-2xl border border-green/20 bg-green/[0.06] p-5 text-sm text-gunmetal">
+          <p class="font-medium text-green">Purpose</p>
+          <p class="mt-2">Experience the room, lower barrier to entry, monetize attendees who are not members, and create a clear path toward membership upgrades.</p>
+        </div>
+        <div class="mt-8">
+          <p class="section-kicker text-bronze">Includes</p>
+          <p class="mt-2 text-sm text-gunmetal">Admission to <span class="font-medium text-carbon">one flagship</span> Dealmakers event.</p>
+        </div>
+        <div class="mt-6">
+          <p class="section-kicker text-gunmetal">Does not include</p>
+          <ul class="mt-3 grid gap-1.5 text-sm text-gunmetal sm:grid-cols-2">
+            <li>Membership access</li>
+            <li>Member-only events</li>
+            <li>Retreat access</li>
+            <li>Pool parties</li>
+            <li>Strategy access</li>
+            <li>Recognition</li>
+            <li>Sponsor visibility</li>
+            <li>Booth space</li>
+            <li>Promotional benefits</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fly-in fly-from-right space-y-6">
+        <div class="img-frame-fill aspect-[4/5] min-h-[16rem] rounded-3xl shadow-xl shadow-carbon/15 ring-1 ring-gunmetal/10 md:aspect-[3/4]">
+          <img src="images/Violet%20Crowned%20Media_Deal%20Makers-4_websize.jpg" alt="Guests experiencing a flagship Dealmakers session" class="object-center" width="1600" height="1067" loading="lazy" />
+        </div>
+        <div class="rounded-2xl border border-gunmetal/15 bg-white p-6 shadow-sm">
+          <p class="text-sm text-gunmetal">Single-session attendance is registered through <a href="/events" class="font-semibold text-green hover:underline">Events</a> and Zoho Backstage. Timing windows apply; investment is not listed on the public site.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Individual -->
+  <section id="individual-membership" class="border-t border-gunmetal/10 bg-white/55 py-14 md:py-20">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <div class="fly-in lg:flex lg:items-end lg:justify-between lg:gap-10">
+        <div>
+          <p class="section-kicker text-green">Section 3</p>
+          <h2 class="mt-4 section-title">Individual membership</h2>
+          <p class="mt-4 max-w-2xl text-gunmetal">Annual belonging for operators who want recurring access and deeper involvement — <span class="font-medium text-carbon">a community access product</span>, not strategy, title, or sponsorship.</p>
+        </div>
+        <div class="mt-8 shrink-0 rounded-3xl bg-green px-8 py-6 text-center text-bone shadow-xl shadow-green/25 lg:mt-0 lg:text-left">
+          <p class="section-kicker text-bronze/90">Belong to the ecosystem</p>
+          <a href="/membership#membership-inquiry" class="motion-safe:transition mt-4 inline-flex items-center gap-2 rounded-full bg-bone/15 px-5 py-2.5 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-bone hover:bg-bone/25">Membership inquiry</a>
+        </div>
+      </div>
+      <div class="fly-in fly-stagger-1 mt-10 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+        <div class="img-frame img-frame--4-3 md:rounded-3xl"><img src="images/Dealmakers_0057.jpg" alt="Expert panel at a member event" class="object-[center_35%]" width="1920" height="1280" loading="lazy" /></div>
+        <div class="img-frame img-frame--4-3 md:rounded-3xl"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-65_websize.jpg" alt="Member community in the room" class="object-center" width="1600" height="1067" loading="lazy" /></div>
+        <div class="img-frame img-frame--4-3 col-span-2 md:col-span-1 md:rounded-3xl"><img src="images/Dealmakers_0124.jpg" alt="Recurring members connecting" class="object-center" width="1920" height="1280" loading="lazy" /></div>
+      </div>
+      <p class="fly-in fly-stagger-2 mt-10 max-w-3xl rounded-2xl border border-gunmetal/10 bg-bone px-6 py-5 font-heading text-lg font-medium italic text-carbon">&ldquo;A Member pays to belong.&rdquo;</p>
+      <div class="fly-in fly-stagger-2 mt-10 grid gap-6 md:grid-cols-2">
+        <div class="rounded-2xl bg-white p-6 ring-1 ring-gunmetal/10 md:p-8">
+          <p class="section-kicker text-bronze">Purpose</p>
+          <ul class="mt-4 space-y-2 text-sm text-gunmetal">
+            <li>Create belonging</li>
+            <li>Deepen relationships</li>
+            <li>Reward recurring participation</li>
+            <li>Improve retention</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-white p-6 ring-1 ring-gunmetal/10 md:p-8">
+          <p class="section-kicker text-bronze">Includes</p>
+          <ul class="mt-4 space-y-2 text-sm text-gunmetal">
+            <li>Quarterly marquee events</li>
+            <li>Member-only experiences</li>
+            <li>Come early / stay late access</li>
+            <li>Curated introductions</li>
+            <li>Founder dinners and socials</li>
+            <li>Wellness gatherings &amp; recreation experiences</li>
+            <li>Priority access opportunities</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fly-in fly-stagger-3 mt-8 rounded-2xl border border-dashed border-gunmetal/25 bg-gunmetal/[0.03] px-6 py-5">
+        <p class="section-kicker text-gunmetal">Does not include</p>
+        <p class="mt-2 text-sm text-gunmetal">Company-wide access · permanent recognition · strategy seats · Founding Member status · sponsorship benefits · booths · guaranteed speaking opportunities</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company -->
+  <section id="company-membership" class="border-t border-gunmetal/10 bg-bone py-14 md:py-20">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
+        <div class="min-w-0">
+          <p class="fly-in section-kicker text-green">Section 4</p>
+          <h2 class="fly-in fly-stagger-1 mt-3 section-title">Company membership</h2>
+          <p class="fly-in fly-stagger-2 mt-4 max-w-3xl text-gunmetal">Corporate Membership is a <em class="not-italic font-medium text-carbon">partnership product</em> — not sponsorship, not a seat package. It represents your company&apos;s association with the ecosystem.</p>
+          <div class="fly-in fly-stagger-3 mt-10 grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+            <div class="rounded-2xl border border-gunmetal/10 bg-white p-6 shadow-sm"><p class="font-heading font-semibold text-carbon">Team Membership</p><p class="mt-2 text-sm text-gunmetal">Recurring access for key team members inside the ecosystem.</p></div>
+            <div class="rounded-2xl border-2 border-bronze/30 bg-white p-6 shadow-sm"><p class="font-heading font-semibold text-carbon">Strategic Partner</p><p class="mt-2 text-sm text-gunmetal">Stronger visibility and long-term relationship development.</p></div>
+            <div class="rounded-2xl bg-carbon p-6 text-bone shadow-sm"><p class="font-heading font-semibold">Ecosystem Partner</p><p class="mt-2 text-sm text-bone/75">Deeper strategic presence with the Dealmakers brand.</p></div>
+          </div>
+        </div>
+        <div class="fly-in fly-from-right">
+          <div class="img-frame-fill aspect-[4/5] min-h-[16rem] rounded-3xl shadow-2xl shadow-carbon/15 ring-1 ring-gunmetal/10 lg:aspect-[3/4] lg:min-h-[20rem]">
+            <img src="images/Dealmakers_0057.jpg" alt="Professional teams in a panel discussion" class="object-[center_35%]" width="1920" height="1280" loading="lazy" />
+          </div>
+          <p class="mt-3 text-center text-xs text-gunmetal/75">Named seats — intentional team presence in the room</p>
+        </div>
+      </div>
+      <div class="fly-in mt-10 grid gap-8 lg:grid-cols-3">
+        <div class="rounded-2xl border border-green/20 bg-green/[0.06] p-6">
+          <p class="flex items-center gap-2 font-medium text-green"><i data-feather="users" class="h-4 w-4"></i>Seat structure</p>
+          <p class="mt-3 text-sm text-gunmetal">Seats are <span class="font-medium text-carbon">named</span>, <span class="font-medium text-carbon">intentional</span>, <span class="font-medium text-carbon">non-floating</span>, and not casually interchangeable.</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 ring-1 ring-gunmetal/10">
+          <p class="section-kicker text-bronze">Included per seat</p>
+          <p class="mt-3 text-sm text-gunmetal">Same practical benefits as an Individual Member — flagship access, happy hours when applicable, retreats, pool party / backyard bash, and member-exclusive programming.</p>
+        </div>
+        <div class="rounded-2xl border border-red-950/15 bg-white p-6 ring-1 ring-gunmetal/10">
+          <p class="section-kicker text-gunmetal">Does not include</p>
+          <p class="mt-3 text-sm text-gunmetal">Sponsor benefits · logo placement · booth · advertising · public recognition · strategy lane access.</p>
+        </div>
+      </div>
+      <p class="fly-in mt-10 rounded-2xl border-2 border-bronze/30 bg-bone px-6 py-5 text-center text-sm font-medium text-carbon md:text-base">Company Membership must not drift into sponsorship.</p>
+    </div>
+  </section>
+
+  <!-- Founding -->
+  <section id="founding-membership" class="relative border-t border-gunmetal/10 bg-carbon py-20 text-bone md:py-28 noise-carbon">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_50%_at_100%_20%,rgba(31,61,43,0.45),transparent)]" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div class="fly-in min-w-0">
+          <p class="section-kicker text-bronze">Section 5</p>
+          <h2 class="mt-4 font-heading text-2xl font-semibold md:text-4xl">Founding membership</h2>
+          <p class="mt-6 text-bone/75">A limited partner-class designation for early builders in a market — automatic full membership privileges plus elevated standing strategy access.</p>
+          <div class="mt-8 border-t border-white/10 pt-8">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-bone/45">Capacity</p>
+            <p class="mt-1 font-heading text-3xl font-semibold text-bone md:text-4xl">Limited founding circle <span class="text-lg font-medium text-bone/60">per market</span></p>
+            <p class="mt-3 text-sm text-bone/55">Investment and renewal terms are shared conversationally — not on the public site.</p>
+          </div>
+          <blockquote class="mt-10 border-l-2 border-bronze pl-5 font-heading text-lg font-medium text-bone/95 md:text-xl">&ldquo;A Founding Member pays to help build.&rdquo;</blockquote>
+        </div>
+        <div class="fly-in fly-from-right space-y-5">
+          <div class="img-frame-fill aspect-[16/10] min-h-[12rem] rounded-3xl shadow-2xl shadow-carbon/40 ring-1 ring-white/10">
+            <img src="images/DealmakersNovember_0003.jpg" alt="Founding circle gathering" class="object-center" width="1920" height="1280" loading="lazy" />
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-sm">
+            <p class="section-kicker text-bronze">Membership bundled</p>
+            <p class="mt-2 text-sm text-bone/75">All Individual Membership benefits are included automatically.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-sm">
+            <p class="section-kicker text-bronze">Additional benefits</p>
+            <ul class="mt-3 grid gap-2 text-sm text-bone/75">
+              <li>Permanent recognition</li>
+              <li>Strategy seat</li>
+              <li>Bi-annual strategy calls</li>
+              <li>Elevated standing</li>
+              <li>Leadership consideration</li>
+              <li>Community contribution opportunities</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-sm">
+            <p class="section-kicker text-bone/55">Expectations</p>
+            <p class="mt-2 text-sm text-bone/70">Contribution of ideas, relationships, credibility, content, and strategic partnership.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-6 text-sm text-bone/65 backdrop-blur-sm">
+            <p class="section-kicker text-bone/45">Does not automatically include</p>
+            <p class="mt-2">Booth space, exclusive event ownership, exclusive rights, guaranteed keynotes — sponsor packages are purchased separately unless explicitly negotiated.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsorship lane -->
+  <section id="sponsorship-lane" class="border-t border-gunmetal/10 bg-bone py-16 md:py-20">
+    <div class="mx-auto grid max-w-7xl gap-12 px-5 md:grid-cols-2 md:gap-16 md:px-8 lg:items-center">
+      <div class="fly-in min-w-0 text-center md:text-left">
+        <p class="section-kicker text-green">Section 6</p>
+        <h2 class="mt-3 section-title">Sponsorship as a lane</h2>
+        <p class="mt-6 text-lg text-gunmetal">This is the <span class="font-medium text-carbon">commercial visibility</span> path — advertisers buy promotion, placements, activation, and audience-facing presence. Distinct from membership (belonging) or founding identity (building).</p>
+        <div class="mt-10 btn-row justify-center md:justify-start">
+          <a href="/sponsorship" class="btn btn-green motion-safe:transition shadow-lg shadow-green/25">Sponsorship overview</a>
+          <a href="#event-sponsors" class="btn btn-outline motion-safe:transition">Event tiers</a>
+        </div>
+      </div>
+      <div class="fly-in fly-from-right">
+        <div class="img-frame-fill aspect-[16/10] min-h-[14rem] rounded-3xl shadow-2xl shadow-carbon/20 ring-1 ring-gunmetal/10">
+          <img src="images/Dealmakers_0125.jpg" alt="Sponsor visibility at a flagship Dealmakers event" class="object-[center_45%]" width="1920" height="1280" loading="lazy" />
+        </div>
+        <p class="mt-3 text-center text-xs text-gunmetal/75">Brand presence in a curated, high-signal room</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event sponsors -->
+  <section id="event-sponsors" class="border-t border-gunmetal/10 bg-white/60 py-14 md:py-20">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <p class="fly-in section-kicker text-green">Section 7</p>
+      <h2 class="fly-in fly-stagger-1 mt-3 section-title">Event-based sponsorship</h2>
+      <p class="fly-in fly-stagger-2 mt-4 max-w-3xl text-gunmetal">Monetizes flagship gatherings while aligning sponsor expectations with tangible visibility levers.</p>
+      <div class="fly-in fly-stagger-3 mt-10 grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-stretch">
+        <blockquote class="rounded-2xl border border-green/25 bg-green/[0.06] px-6 py-5 font-medium text-carbon lg:self-center">&ldquo;An Event Sponsor pays to be seen at a specific event.&rdquo;</blockquote>
+        <div class="img-frame img-frame--16-10 img-frame--lg rounded-3xl shadow-lg"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-58_websize.jpg" alt="Event networking and sponsor touchpoints" class="object-center" width="1600" height="1067" loading="lazy" /></div>
+      </div>
+      <div class="fly-in fly-stagger-4 mt-10 grid gap-5 md:grid-cols-3">
+        <div class="rounded-2xl border border-gunmetal/15 bg-white p-6 shadow-sm">
+          <p class="font-heading section-kicker text-gunmetal">Event tier</p>
+          <p class="mt-2 font-heading text-xl font-semibold text-carbon">Supporting Sponsor</p>
+        </div>
+        <div class="rounded-2xl border-2 border-bronze/40 bg-bone p-6 shadow-lg">
+          <p class="font-heading section-kicker text-bronze">Event tier</p>
+          <p class="mt-2 font-heading text-xl font-semibold text-carbon">Featured Sponsor</p>
+        </div>
+        <div class="rounded-2xl border border-gunmetal/15 bg-carbon p-6 text-bone shadow-xl">
+          <p class="font-heading section-kicker text-bronze">Event tier</p>
+          <p class="mt-2 font-heading text-xl font-semibold">Premier Sponsor</p>
+        </div>
+      </div>
+      <p class="fly-in mt-6 text-sm text-gunmetal">Bundled memberships <span class="font-medium text-carbon">density the ecosystem</span>, deepen sponsor involvement, and keep participation authentic.</p>
+      <div class="fly-in mt-10 grid gap-8 md:grid-cols-2">
+        <div>
+          <p class="section-kicker text-bronze">Typical sponsor benefits</p>
+          <ul class="mt-3 space-y-1.5 text-sm text-gunmetal">
+            <li>Logo placement</li><li>Stage mentions</li><li>Social media mentions</li><li>Event recognition</li><li>Booth opportunities (where offered)</li><li>Bundled memberships as shown above</li>
+          </ul>
+        </div>
+        <div>
+          <p class="section-kicker text-gunmetal">Does not confer</p>
+          <ul class="mt-3 space-y-1.5 text-sm text-gunmetal">
+            <li>Founding Member standing</li><li>Standalone strategy lane access without fit</li><li>Permanent market recognition outside sponsor deliverables</li><li>Automatic annual visibility absent an annual sponsorship</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Annual corporate -->
+  <section id="annual-corporate" class="relative border-t border-gunmetal/10 bg-carbon py-20 text-bone md:py-28 noise-carbon">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_100%,rgba(197,163,125,0.09),transparent)]" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
+        <div class="min-w-0">
+          <p class="fly-in section-kicker text-bronze">Section 8</p>
+          <h2 class="fly-in fly-stagger-1 mt-3 font-heading text-2xl font-semibold md:text-4xl">Annual corporate sponsorship</h2>
+          <p class="fly-in fly-stagger-2 mt-4 max-w-3xl text-bone/70">Brand stays visible inside the ecosystem for a full year — purpose-built for trust-heavy service firms that benefit from recurrence.</p>
+          <div class="fly-in fly-stagger-3 mt-8 rounded-2xl border border-white/15 bg-white/[0.04] px-6 py-4 text-sm text-bone/80 backdrop-blur-sm md:text-[15px]">
+            Best fit · lenders · brokerages · title · law · accounting · insurance · recurring professional services allies
+          </div>
+          <p class="fly-in mt-8 font-heading text-sm font-semibold uppercase tracking-[0.15em] text-bronze">Event Sponsor = visibility for one flagship · Annual Sponsor = recurring visibility ecosystem-wide</p>
+        </div>
+        <div class="fly-in fly-from-right">
+          <div class="img-frame-fill aspect-[4/3] min-h-[14rem] rounded-3xl shadow-2xl shadow-carbon/40 ring-1 ring-white/10">
+            <img src="images/Violet%20Crowned%20Media_Deal%20Makers-26_websize.jpg" alt="Year-round ecosystem visibility at Dealmakers events" class="object-[65%_center]" width="1600" height="1067" loading="lazy" />
+          </div>
+          <p class="mt-3 text-center text-xs text-bone/50">Twelve-month familiarity — not episodic bursts</p>
+        </div>
+      </div>
+      <div class="fly-in mt-14 grid gap-8 lg:grid-cols-3">
+        <article class="flex flex-col rounded-3xl border border-white/10 bg-white/[0.05] p-8 backdrop-blur-sm">
+          <p class="section-kicker text-bronze">Supporting Annual Sponsor</p>
+          <ul class="mt-6 flex-1 space-y-3 text-sm text-bone/70">
+            <li>Annual sponsor recognition</li>
+            <li>Selected flagship event visibility</li>
+            <li>2 Company Membership seats</li>
+            <li>Quarterly sponsor spotlight</li>
+            <li>One booth opportunity</li>
+          </ul>
+        </article>
+        <article class="flex flex-col rounded-3xl border-2 border-bronze/50 bg-carbon p-8 shadow-xl">
+          <p class="section-kicker text-bronze">Featured Annual Sponsor</p>
+          <p class="mt-4 text-[11px] font-semibold uppercase tracking-wider text-bone/50">Everything in Supporting plus</p>
+          <ul class="mt-4 flex-1 space-y-3 text-sm text-bone/75">
+            <li>Broader scheduled visibility</li>
+            <li>4 Company Membership seats</li>
+            <li>Recurring sponsor spotlights</li>
+            <li>Two booth windows</li>
+            <li>Thought-leadership consideration</li>
+          </ul>
+        </article>
+        <article class="flex flex-col rounded-3xl border border-green/30 bg-green/[0.12] p-8">
+          <p class="section-kicker text-bronze">Premier Annual Sponsor</p>
+          <p class="mt-3 text-sm text-bone/65">Custom annual partnerships — scoped after conversation.</p>
+          <ul class="mt-8 flex-1 space-y-3 text-sm text-bone/80">
+            <li>Highest recurring visibility</li>
+            <li>Premium placement &amp; cadence</li>
+            <li>6 Company Membership seats</li>
+            <li>Multiple booth rights</li>
+            <li>First-call custom integrations</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founding vs sponsor -->
+  <section id="founding-vs-sponsor" class="border-t border-gunmetal/10 bg-bone py-14 md:py-20">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <p class="fly-in section-kicker text-green">Section 9</p>
+      <h2 class="fly-in fly-stagger-1 mt-3 section-title">Founding Membership vs Sponsorship</h2>
+      <p class="fly-in fly-stagger-2 mt-4 max-w-3xl font-medium text-carbon md:text-lg">This is one of the most important distinctions across the ecosystem.</p>
+      <div class="fly-in fly-stagger-3 mt-14 grid gap-8 lg:grid-cols-2">
+        <div class="overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-gunmetal/10">
+          <div class="img-frame img-frame--16-10 max-h-52"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-71_websize.jpg" alt="Founding member posture — strategy and standing in the room" class="object-[center_30%]" width="720" height="900" loading="lazy" /></div>
+          <div class="p-8 md:p-10">
+            <p class="section-kicker text-bronze">Founding Member</p>
+            <p class="mt-4 font-heading text-xl font-semibold text-carbon">Identity &amp; long-term posture</p>
+            <ul class="mt-6 space-y-3 text-sm text-gunmetal">
+              <li>Standing within the community</li>
+              <li>Strategy rhythm &amp; calls</li>
+              <li>Permanent recognition tied to builders</li>
+              <li>Leadership posture &amp; partnership expectations</li>
+            </ul>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-3xl border-2 border-green/25 bg-green/[0.08] shadow-lg">
+          <div class="img-frame img-frame--16-10 max-h-52"><img src="images/Dealmakers_0125.jpg" alt="Sponsor posture — brand visibility in the room" class="object-[center_45%]" width="1920" height="1280" loading="lazy" /></div>
+          <div class="p-8 md:p-10">
+            <p class="section-kicker text-green">Sponsor</p>
+            <p class="mt-4 font-heading text-xl font-semibold text-carbon">Promotion &amp; activation</p>
+            <ul class="mt-6 space-y-3 text-sm text-gunmetal">
+              <li>Brand visibility placements</li>
+              <li>Audience-facing promotion</li>
+              <li>Commercial recognition windows</li>
+              <li>Activation mechanics (includes booth rights where negotiated)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="fly-in mt-12 rounded-2xl border border-gunmetal/15 bg-gunmetal/[0.04] px-6 py-5 text-center text-sm md:text-[15px]">
+        Founding Members may receive recognition reflective of stature — booth space nonetheless remains principally a sponsor deliverable unless explicitly packaged otherwise.
+      </div>
+      <div class="fly-in mt-10 grid gap-4 text-center md:grid-cols-3">
+        <div class="rounded-2xl bg-white p-5 ring-1 ring-gunmetal/10"><p class="font-heading text-[11px] font-semibold uppercase tracking-wider text-green">Short language</p><p class="mt-3 text-sm text-gunmetal">Member = pays to <span class="font-medium text-carbon">belong</span></p></div>
+        <div class="rounded-2xl bg-white p-5 ring-1 ring-gunmetal/10"><p class="font-heading text-[11px] font-semibold uppercase tracking-wider text-bronze">Short language</p><p class="mt-3 text-sm text-gunmetal">Founding Member = pays to <span class="font-medium text-carbon">help build</span></p></div>
+        <div class="rounded-2xl bg-white p-5 ring-1 ring-gunmetal/10"><p class="font-heading text-[11px] font-semibold uppercase tracking-wider text-green">Short language</p><p class="mt-3 text-sm text-gunmetal">Sponsor = pays to <span class="font-medium text-carbon">be seen</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Relationships -->
+  <section id="relationships" class="border-t border-gunmetal/10 bg-white/55 py-16 md:py-20">
+    <div class="mx-auto grid max-w-7xl gap-12 px-5 md:grid-cols-2 md:gap-16 md:px-8 lg:items-center">
+      <div class="fly-in min-w-0">
+        <p class="section-kicker text-green">Section 10</p>
+        <h2 class="mt-3 font-heading text-2xl font-semibold text-carbon">Relationship between products</h2>
+        <p class="mt-6 text-gunmetal">Lanes can coexist but are never interchangeable substitutes.</p>
+        <ul class="mt-10 space-y-4 text-sm text-gunmetal md:text-[15px]">
+          <li class="flex gap-3 rounded-2xl bg-bone px-5 py-4 ring-1 ring-gunmetal/10"><span class="text-green">•</span> A firm can sponsor <em class="not-italic font-medium text-carbon">and</em> hold company seats — each relationship stands on distinct deliverables.</li>
+          <li class="flex gap-3 rounded-2xl bg-bone px-5 py-4 ring-1 ring-gunmetal/10"><span class="text-green">•</span> Founding Member status does not auto-convert someone into an event sponsor placement.</li>
+          <li class="flex gap-3 rounded-2xl bg-bone px-5 py-4 ring-1 ring-gunmetal/10"><span class="text-green">•</span> Sponsorship does not automatically confer prestige status or enduring strategy entitlement.</li>
+        </ul>
+      </div>
+      <div class="fly-in fly-from-right">
+        <div class="img-frame-fill aspect-[4/5] min-h-[14rem] rounded-3xl shadow-xl shadow-carbon/10 ring-1 ring-gunmetal/10">
+          <img src="images/Violet%20Crowned%20Media_Deal%20Makers-64_websize.jpg" alt="Multiple lanes represented in one Dealmakers gathering" class="object-center" width="1600" height="1067" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Talking points -->
+  <section id="talking-points" class="relative border-t border-gunmetal/10 bg-carbon py-20 text-bone md:py-24 noise-carbon">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_90%_0%,rgba(197,163,125,0.1),transparent)]" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto grid max-w-7xl gap-12 px-5 md:grid-cols-2 md:gap-16 md:px-8 lg:items-center">
+      <div class="fly-in min-w-0">
+        <p class="section-kicker text-bronze">Section 11</p>
+        <h2 class="mt-3 font-heading text-2xl font-semibold md:text-4xl">Team talking points — short version</h2>
+        <ul class="mt-12 space-y-5 text-lg font-medium leading-relaxed text-bone/90 md:text-xl">
+          <li class="border-l-2 border-bronze pl-6">General Admission lets you attend.</li>
+          <li class="border-l-2 border-bronze pl-6">Membership keeps you close.</li>
+          <li class="border-l-2 border-bronze pl-6">Company Membership brings your team in.</li>
+          <li class="border-l-2 border-bronze pl-6">Founding Membership lets you help build.</li>
+          <li class="border-l-2 border-bronze pl-6">Sponsorship puts your brand in front of the ecosystem.</li>
+          <li class="border-l-2 border-bronze pl-6">Annual Sponsorship keeps your brand visible year-round.</li>
+        </ul>
+      </div>
+      <div class="fly-in fly-from-right grid grid-cols-2 gap-3">
+        <div class="img-frame img-frame--4-3 rounded-2xl ring-white/10"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-84_websize.jpg" alt="Team briefing before an event" class="object-center" width="1600" height="1067" loading="lazy" /></div>
+        <div class="img-frame img-frame--4-3 rounded-2xl ring-white/10"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-78_websize.jpg" alt="Conversations that move deals forward" class="object-center" width="1600" height="1067" loading="lazy" /></div>
+        <div class="img-frame img-frame--16-10 col-span-2 rounded-2xl ring-white/10"><img src="images/Dealmakers_0040.jpg" alt="The full Dealmakers ecosystem in one room" class="object-[center_40%]" width="1920" height="1280" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fulfillment -->
+  <section id="fulfillment" class="border-t border-gunmetal/10 bg-bone py-16 md:py-20">
+    <div class="mx-auto grid max-w-7xl gap-12 px-5 md:grid-cols-2 md:gap-16 md:px-8 lg:items-center">
+      <div class="fly-in fly-from-left img-frame img-frame--16-11 img-frame--lg order-2 shadow-xl md:order-1">
+        <img src="images/Violet%20Crowned%20Media_Deal%20Makers-65_websize.jpg" alt="Guests connecting at Dealmakers" class="object-center" width="1600" height="1067" loading="lazy" />
+      </div>
+      <div class="fly-in order-1 md:order-2">
+        <p class="section-kicker text-green">Section 12</p>
+        <h2 class="mt-4 section-title">Fulfillment philosophy</h2>
+        <ul class="mt-8 space-y-4 text-gunmetal">
+          <li>Keep offers intentionally simple rather than drowning partners in brittle checklists.</li>
+          <li>Sell sponsorship in broad value pillars — visibility, recurring presence, recognition, activation, included seats.</li>
+          <li>Protect internal clarity between Company Membership drift and Sponsor deliverables.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operating notes -->
+  <section id="notes" class="border-t border-gunmetal/10 bg-white/65 py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
+        <div>
+          <p class="fly-in section-kicker text-green">Section 13</p>
+          <h2 class="fly-in fly-stagger-1 mt-3 font-heading text-2xl font-semibold text-carbon">Operating notes</h2>
+          <ul class="fly-in fly-stagger-2 mt-10 space-y-4">
+            <li class="flex gap-4 rounded-2xl border border-gunmetal/15 bg-white px-5 py-4 text-sm shadow-sm md:text-[15px]"><span class="font-heading font-bold text-bronze">1</span> Lead messaging with the value ladder — attendee → member → team → founding → sponsor.</li>
+            <li class="flex gap-4 rounded-2xl border border-gunmetal/15 bg-white px-5 py-4 text-sm shadow-sm md:text-[15px]"><span class="font-heading font-bold text-bronze">2</span> Maintain bright lines between Founding Membership and Sponsor lanes.</li>
+            <li class="flex gap-4 rounded-2xl border border-gunmetal/15 bg-white px-5 py-4 text-sm shadow-sm md:text-[15px]"><span class="font-heading font-bold text-bronze">3</span> Stop Company Membership from quietly inheriting sponsorship deliverables.</li>
+            <li class="flex gap-4 rounded-2xl border border-gunmetal/15 bg-white px-5 py-4 text-sm shadow-sm md:text-[15px]"><span class="font-heading font-bold text-bronze">4</span> Honour Founding capacity caps (maximum 10 per market).</li>
+            <li class="flex gap-4 rounded-2xl border border-gunmetal/15 bg-white px-5 py-4 text-sm shadow-sm md:text-[15px]"><span class="font-heading font-bold text-bronze">5</span> Position Annual Sponsorship explicitly as twelve-month familiarity, not episodic bursts.</li>
+          </ul>
+        </div>
+        <div class="fly-in fly-from-right grid grid-cols-2 gap-3">
+          <div class="img-frame img-frame--4-3 rounded-2xl"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-55_websize.jpg" alt="Operating rhythm in the room" class="object-center" width="1600" height="1067" loading="lazy" /></div>
+          <div class="img-frame img-frame--4-3 rounded-2xl"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-36_websize.jpg" alt="Curated participation at Dealmakers" class="object-center" width="1600" height="1067" loading="lazy" /></div>
+          <div class="img-frame img-frame--16-10 col-span-2 rounded-2xl"><img src="images/Violet%20Crowned%20Media_Deal%20Makers-46_websize.jpg" alt="Ecosystem execution in practice" class="object-center" width="1600" height="1067" loading="lazy" /></div>
+        </div>
+      </div>
+      <div class="fly-in fly-stagger-3 mt-14 btn-row justify-center">
+        <a href="/membership" class="btn btn-green motion-safe:transition shadow-lg shadow-green/25">Membership page</a>
+        <a href="/sponsorship" class="btn btn-outline motion-safe:transition">Sponsorship visuals</a>
+        <a href="#" data-book-call class="btn btn-bronze motion-safe:transition shadow-md">Book a Call with Dani</a>
+        <a href="/contact" class="btn btn-outline motion-safe:transition">Contact</a>
+      </div>
+    </div>
+  </section>
+<?php require __DIR__ . '/includes/layout-end.php'; ?>

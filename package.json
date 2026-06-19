@@ -5,8 +5,13 @@
     "build": "npm run build:css",
     "build:css": "tailwindcss -i ./src/tailwind.input.css -o ./css/site.css --minify",
     "dev": "node scripts/dev-server.js",
+    "convert:php": "npm run build:css && node scripts/convert-to-php.js",
+    "dev:php": "npm run convert:php && cd php && php -S 127.0.0.1:8080 router.php",
     "optimize:images": "sh scripts/optimize-images.sh",
-    "package:godaddy": "sh scripts/package-godaddy.sh"
+    "package:godaddy": "sh scripts/package-godaddy.sh",
+    "convert:php": "node scripts/convert-to-php.js",
+    "dev:php": "cd php && php -S 127.0.0.1:8080 router.php",
+    "convert:php": "node scripts/convert-to-php.js"
   },
   "dependencies": {
     "express": "^4.21.2",
