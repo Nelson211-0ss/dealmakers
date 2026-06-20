@@ -13,7 +13,7 @@ return [
     'instagramUrl' => 'https://www.instagram.com/dealmakers_us/',
     'forms' => [
         'membershipInquiry' =>
-            'https://forms.zohopublic.com/dealmakersllc1/form/MembershipInquiryForm/formperma/RpZ_jsKGUB8pLAfHX5HCcAjN932aduq6LnFcmR36OY4',
+            'https://forms.zohopublic.com/dealmakersllc1/form/MembershipInquiryForm1',
         'sponsorshipInquiry' =>
             'https://forms.zohopublic.com/dealmakersllc1/form/SponsorshipInterestForm/formperma/uOTtg-6ftxEwF-X5eanhjpAk9AyLuyax38aXRYxCJVo',
         'speakerIntake' =>

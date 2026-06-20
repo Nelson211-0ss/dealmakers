@@ -15,10 +15,16 @@
 
   function initIframes() {
     var cfg = window.DEALMAKERS_SITE;
-    var requestAccess = cfg && cfg.forms && cfg.forms.requestAccess;
-    if (requestAccess) {
-      var accessFrame = document.getElementById('request-access-form');
-      if (accessFrame) accessFrame.setAttribute('data-src', requestAccess);
+    var forms = cfg && cfg.forms;
+    if (forms) {
+      if (forms.requestAccess) {
+        var accessFrame = document.getElementById('request-access-form');
+        if (accessFrame) accessFrame.setAttribute('data-src', forms.requestAccess);
+      }
+      if (forms.membershipInquiry) {
+        var membershipFrame = document.getElementById('membership-inquiry-form');
+        if (membershipFrame) membershipFrame.setAttribute('data-src', forms.membershipInquiry);
+      }
     }
 
     document.querySelectorAll('iframe[data-zoho-form]').forEach(function (iframe) {
