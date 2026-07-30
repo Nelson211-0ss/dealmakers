@@ -5,8 +5,7 @@
  */
 window.DEALMAKERS_SITE = {
   calendlyUrl: 'https://calendly.com/dani-dealmakersus/30min',
-  membershipCheckoutUrl:
-    'https://zohosecurepay.com/checkout/0ycqpsx-klx9vmn3mqmw/Dealmakers-LLC',
+  membershipCheckoutUrl: 'https://buy.stripe.com/14AfZab4O440c9mh1M0RG00',
   contactEmail: 'deals@dealmakersus.com',
   linkedinUrl: 'https://www.linkedin.com/company/dealmakers-us/?viewAsMember=true',
   instagramUrl: 'https://www.instagram.com/dealmakers_us/',
